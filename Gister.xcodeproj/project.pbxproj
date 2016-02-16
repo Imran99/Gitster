@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DC7CEB41C73CAB000C1BF4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */; };
+		1DC7CEB61C73CAB000C1BF4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB51C73CAB000C1BF4A /* ViewController.swift */; };
+		1DC7CEB91C73CAB000C1BF4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB71C73CAB000C1BF4A /* Main.storyboard */; };
+		1DC7CEBB1C73CAB000C1BF4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC7CEBA1C73CAB000C1BF4A /* Assets.xcassets */; };
+		1DC7CEBE1C73CAB000C1BF4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC7CEBC1C73CAB000C1BF4A /* LaunchScreen.storyboard */; };
+		1DC7CEC91C73CAB000C1BF4A /* GisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEC81C73CAB000C1BF4A /* GisterTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1DC7CEC51C73CAB000C1BF4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1DC7CEA81C73CAB000C1BF4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DC7CEAF1C73CAB000C1BF4A;
+			remoteInfo = Gister;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1DC7CEB01C73CAB000C1BF4A /* Gister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gister.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1DC7CEB51C73CAB000C1BF4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1DC7CEB81C73CAB000C1BF4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1DC7CEBA1C73CAB000C1BF4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1DC7CEBD1C73CAB000C1BF4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1DC7CEBF1C73CAB000C1BF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DC7CEC41C73CAB000C1BF4A /* GisterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GisterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DC7CEC81C73CAB000C1BF4A /* GisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GisterTests.swift; sourceTree = "<group>"; };
+		1DC7CECA1C73CAB000C1BF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1DC7CEAD1C73CAB000C1BF4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DC7CEC11C73CAB000C1BF4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1DC7CEA71C73CAB000C1BF4A = {
+			isa = PBXGroup;
+			children = (
+				1DC7CEB21C73CAB000C1BF4A /* Gister */,
+				1DC7CEC71C73CAB000C1BF4A /* GisterTests */,
+				1DC7CEB11C73CAB000C1BF4A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1DC7CEB11C73CAB000C1BF4A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1DC7CEB01C73CAB000C1BF4A /* Gister.app */,
+				1DC7CEC41C73CAB000C1BF4A /* GisterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1DC7CEB21C73CAB000C1BF4A /* Gister */ = {
+			isa = PBXGroup;
+			children = (
+				1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */,
+				1DC7CEB51C73CAB000C1BF4A /* ViewController.swift */,
+				1DC7CEB71C73CAB000C1BF4A /* Main.storyboard */,
+				1DC7CEBA1C73CAB000C1BF4A /* Assets.xcassets */,
+				1DC7CEBC1C73CAB000C1BF4A /* LaunchScreen.storyboard */,
+				1DC7CEBF1C73CAB000C1BF4A /* Info.plist */,
+			);
+			path = Gister;
+			sourceTree = "<group>";
+		};
+		1DC7CEC71C73CAB000C1BF4A /* GisterTests */ = {
+			isa = PBXGroup;
+			children = (
+				1DC7CEC81C73CAB000C1BF4A /* GisterTests.swift */,
+				1DC7CECA1C73CAB000C1BF4A /* Info.plist */,
+			);
+			path = GisterTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1DC7CEAF1C73CAB000C1BF4A /* Gister */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DC7CECD1C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "Gister" */;
+			buildPhases = (
+				1DC7CEAC1C73CAB000C1BF4A /* Sources */,
+				1DC7CEAD1C73CAB000C1BF4A /* Frameworks */,
+				1DC7CEAE1C73CAB000C1BF4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gister;
+			productName = Gister;
+			productReference = 1DC7CEB01C73CAB000C1BF4A /* Gister.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1DC7CEC31C73CAB000C1BF4A /* GisterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DC7CED01C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "GisterTests" */;
+			buildPhases = (
+				1DC7CEC01C73CAB000C1BF4A /* Sources */,
+				1DC7CEC11C73CAB000C1BF4A /* Frameworks */,
+				1DC7CEC21C73CAB000C1BF4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1DC7CEC61C73CAB000C1BF4A /* PBXTargetDependency */,
+			);
+			name = GisterTests;
+			productName = GisterTests;
+			productReference = 1DC7CEC41C73CAB000C1BF4A /* GisterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1DC7CEA81C73CAB000C1BF4A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = AppBrains;
+				TargetAttributes = {
+					1DC7CEAF1C73CAB000C1BF4A = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					1DC7CEC31C73CAB000C1BF4A = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 1DC7CEAF1C73CAB000C1BF4A;
+					};
+				};
+			};
+			buildConfigurationList = 1DC7CEAB1C73CAB000C1BF4A /* Build configuration list for PBXProject "Gister" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1DC7CEA71C73CAB000C1BF4A;
+			productRefGroup = 1DC7CEB11C73CAB000C1BF4A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1DC7CEAF1C73CAB000C1BF4A /* Gister */,
+				1DC7CEC31C73CAB000C1BF4A /* GisterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1DC7CEAE1C73CAB000C1BF4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DC7CEBE1C73CAB000C1BF4A /* LaunchScreen.storyboard in Resources */,
+				1DC7CEBB1C73CAB000C1BF4A /* Assets.xcassets in Resources */,
+				1DC7CEB91C73CAB000C1BF4A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DC7CEC21C73CAB000C1BF4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1DC7CEAC1C73CAB000C1BF4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DC7CEB61C73CAB000C1BF4A /* ViewController.swift in Sources */,
+				1DC7CEB41C73CAB000C1BF4A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DC7CEC01C73CAB000C1BF4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DC7CEC91C73CAB000C1BF4A /* GisterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1DC7CEC61C73CAB000C1BF4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1DC7CEAF1C73CAB000C1BF4A /* Gister */;
+			targetProxy = 1DC7CEC51C73CAB000C1BF4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1DC7CEB71C73CAB000C1BF4A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DC7CEB81C73CAB000C1BF4A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1DC7CEBC1C73CAB000C1BF4A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DC7CEBD1C73CAB000C1BF4A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DC7CECB1C73CAB000C1BF4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1DC7CECC1C73CAB000C1BF4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1DC7CECE1C73CAB000C1BF4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Gister/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.Gister;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1DC7CECF1C73CAB000C1BF4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Gister/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.Gister;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1DC7CED11C73CAB000C1BF4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GisterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.GisterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gister.app/Gister";
+			};
+			name = Debug;
+		};
+		1DC7CED21C73CAB000C1BF4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GisterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.GisterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gister.app/Gister";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DC7CEAB1C73CAB000C1BF4A /* Build configuration list for PBXProject "Gister" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DC7CECB1C73CAB000C1BF4A /* Debug */,
+				1DC7CECC1C73CAB000C1BF4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DC7CECD1C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "Gister" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DC7CECE1C73CAB000C1BF4A /* Debug */,
+				1DC7CECF1C73CAB000C1BF4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1DC7CED01C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "GisterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DC7CED11C73CAB000C1BF4A /* Debug */,
+				1DC7CED21C73CAB000C1BF4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1DC7CEA81C73CAB000C1BF4A /* Project object */;
+}

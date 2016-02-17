@@ -1,0 +1,13 @@
+PODS:
+  - Alamofire (3.2.0)
+  - Bond (4.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - Bond (~> 4.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
+  Bond: ebe2364b18130690083cbceff036420b21494ae4
+
+COCOAPODS: 0.39.0

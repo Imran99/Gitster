@@ -9,6 +9,7 @@
 import XCTest
 @testable import Gister
 import Bond
+import Nimble
 
 class ViewingGists: XCTestCase {
     
@@ -25,6 +26,6 @@ class ViewingGists: XCTestCase {
     }
     
     func testShouldLoadAGist() {
-        XCTAssertEqual(["bob", "clive"], gistsViewModel.gists.array)
+        expect(self.gistsViewModel.gists.array).to(equal(["bob", "clive"]))
     }
 }

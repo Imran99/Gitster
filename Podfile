@@ -9,6 +9,8 @@ target 'Gister' do
 end
 
 target 'GisterTests' do
+	pod 'Bond', '~> 4.0'
 	pod 'Alamofire', '~> 3.0'
+	pod 'Nimble', '~> 3.1.0'
 end
 

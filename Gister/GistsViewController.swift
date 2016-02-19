@@ -15,7 +15,9 @@ class GistsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.gists.lift().bindTo(tableView){ indexPath, dataSource, tableView in
+        viewModel.gists
+            .lift()
+            .bindTo(tableView){ indexPath, dataSource, tableView in
             let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell))!
             cell.textLabel!.text = dataSource[indexPath.section][indexPath.row]
             return cell
@@ -28,7 +30,4 @@ class GistsViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-

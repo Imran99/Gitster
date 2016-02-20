@@ -62,7 +62,7 @@ class ViewingGists: XCTestCase {
         gitSearchViewModel.searchTerm.value = "abc"
         gitSearchViewModel.searchTerm.value = "abcd"
         
-        expect(self.gitSearchViewModel.gists.array).to(equal(["abcd"]))
+    expect(self.gitSearchViewModel.gists.array).to(equal(["abcd"]))
         expect(self.network.request).to(equal("https://api.github.com/search/repositories?q=abcd"))
     }
     
@@ -79,7 +79,7 @@ class ViewingGists: XCTestCase {
         
         gitSearchViewModel.searchTerm.value = "abcd"
         
-        expect(self.gitSearchViewModel.gists.array).to(equal(["Oops something went wrong!"]))
+        expect(self.gitSearchViewModel.gists.array).to(equal(["Oops! Check the log for details."]))
     }
     
     func testShouldNotDisplayResultsIfItemResponseIsUnexpected(){
@@ -87,7 +87,15 @@ class ViewingGists: XCTestCase {
         
         gitSearchViewModel.searchTerm.value = "abcd"
         
-        expect(self.gitSearchViewModel.gists.array).to(equal(["Oops something went wrong!"]))
+        expect(self.gitSearchViewModel.gists.array).to(equal(["Oops! Check the log for details."]))
+    }
+    
+    func testShouldAllowMultiwordSearch(){
+        network.responses.append(["items" : [["name" : "apple martini"]] ])
+        
+        gitSearchViewModel.searchTerm.value = "apple m"
+        
+        expect(self.gitSearchViewModel.gists.array).to(equal(["apple martini"]))
     }
     
     //todo swiftyjson?

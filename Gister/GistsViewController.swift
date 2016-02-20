@@ -11,7 +11,7 @@ import Bond
 
 class GistsViewController: UITableViewController {
 
-    private let viewModel = GistsViewModel()
+    private let viewModel = GistsViewModel(network: Network())
     
     override func viewDidLoad() {
         super.viewDidLoad()

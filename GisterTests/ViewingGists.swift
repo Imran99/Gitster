@@ -7,18 +7,20 @@
 //
 
 import XCTest
-@testable import Gister
+import Alamofire
 import Bond
 import Nimble
+@testable import Gister
 
 class ViewingGists: XCTestCase {
     
+    var network: FakeNetwork!
     var gistsViewModel: GistsViewModel!
     
     override func setUp() {
         super.setUp()
-        gistsViewModel = GistsViewModel()
-        gistsViewModel.activate()
+        network = FakeNetwork()
+        gistsViewModel = GistsViewModel(network: network)
     }
     
     override func tearDown() {
@@ -26,6 +28,25 @@ class ViewingGists: XCTestCase {
     }
     
     func testShouldLoadAGist() {
+        //arrange
+        network.response = [["name": "bob"], ["name": "clive"]]
+        
+        //act
+        gistsViewModel.activate()
+        
+        //assert
         expect(self.gistsViewModel.gists.array).to(equal(["bob", "clive"]))
+        expect(self.network.request).to(equal("https://api.github.com/gists"))
+    }
+}
+
+class FakeNetwork : Networking{
+    
+    var response: AnyObject!
+    private(set) var request: String?
+    
+    func request(request: String, response: AnyObject?->()){
+        self.request = request
+        response(self.response)
     }
 }

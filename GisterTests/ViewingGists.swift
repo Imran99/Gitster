@@ -20,7 +20,7 @@ class ViewingGists: XCTestCase {
     override func setUp() {
         super.setUp()
         network = FakeNetwork()
-        network.responses.append([["description": "bob"], ["description": "clive"]])
+        network.responses.append([["name": "repo one"], ["name": "repo two"]])
         
         gistsViewModel = GistsViewModel(network: network)
         gistsViewModel.activate()
@@ -31,13 +31,13 @@ class ViewingGists: XCTestCase {
     }
     
     func testShouldLoadGistsOnStart() {
-        expect(self.gistsViewModel.gists.array).to(equal(["bob", "clive"]))
-        expect(self.network.request).to(equal("https://api.github.com/gists"))
+        expect(self.gistsViewModel.gists.array).to(equal(["repo one", "repo two"]))
+        expect(self.network.request).to(equal("https://api.github.com/repositories"))
     }
     
     func testShouldSearchForGists(){
         //arrange
-        network.responses.append([["description" : "apples"]])
+        network.responses.append(["items" : [["name" : "apples"]] ])
         
         //act
         gistsViewModel.searchTerm.value = "a"
@@ -46,5 +46,8 @@ class ViewingGists: XCTestCase {
         expect(self.gistsViewModel.gists.array).to(equal(["apples"]))
     }
     
+    //todo refine search as you type
+    //todo multiword search
     //todo no response
+    //todo swiftyjson?
 }

@@ -29,13 +29,33 @@ public class RepositoryViewModel{
         //todo add params
         searchTerm
             .ignoreNil()
+            .filter({$0.characters.count > 2})
+            .throttle(0.5, queue: Queue.Main)
             .observe({
-            self.network.request("https://api.gtihub.com/search/repositories?q=" + $0, response: { data in
-                let json = data as! [String:AnyObject]
-                let items = json["items"] as! [[String:AnyObject]]
-                self.gists.removeAll()
-                items.forEach({self.gists.append($0["name"] as! String)})
+                let url = "https://api.github.com/search/repositories?q=" + $0
+                print(url)
+                self.network.request(url, response: self.displaySearchResults)
             })
-        })
+    }
+    
+    private func displaySearchResults(data: AnyObject?){
+        self.gists.removeAll()
+        
+        let handleError = {
+            self.gists.append("Oops! Check the log for details.")
+            print(data)
+        }
+        
+        guard let json = data as? [String:AnyObject] else{
+            handleError()
+            return
+        }
+        
+        guard let items = json["items"] as? [[String:AnyObject]] else{
+            handleError()
+            return
+        }
+        
+        items.forEach({self.gists.append($0["name"] as! String)})
     }
 }

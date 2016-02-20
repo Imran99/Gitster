@@ -14,12 +14,20 @@ public protocol Networking{
 }
 
 //todo error handling
+//todo headers
+//todo params
 class Network : Networking{
     func request(url: String, response: AnyObject?->()) {
         Alamofire
-            .request(.GET, url, parameters: ["foo": "bar"], headers: ["auth": "token"])
+            .request(.GET, url)
             .responseJSON(completionHandler: { r in
-                response(r.result.value)
+                
+                switch r.result {
+                case .Success(let data):
+                    response(data)
+                case .Failure(let error):
+                    print(error)
+                }
             })
     }
 }

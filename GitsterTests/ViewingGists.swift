@@ -30,33 +30,65 @@ class ViewingGists: XCTestCase {
         super.tearDown()
     }
     
-    func testShouldLoadGistsOnStart() {
+    func testShouldLoadDefaultPublicReposOnStart() {
         expect(self.repositoryViewModel.gists.array).to(equal(["repo one", "repo two"]))
         expect(self.network.request).to(equal("https://api.github.com/repositories"))
     }
     
-    func testShouldSearchForGists(){
+    func testShouldSearchWhenThreeCharactersOrMoreEntered(){
         //arrange
-        network.responses.append(["items" : [["name" : "avocados"], ["name": "apples"]] ])
+        network.responses.append(["items" : [["name" : "apple martini"], ["name": "apples"]] ])
         
         //act
-        repositoryViewModel.searchTerm.value = "a"
+        repositoryViewModel.searchTerm.value = "app"
         
         //assert
-        expect(self.repositoryViewModel.gists.array).to(equal(["avocados","apples"]))
+        expect(self.repositoryViewModel.gists.array).to(equal(["apple martini","apples"]))
     }
     
-    func testShouldRefineSearchAsTyping(){
+    
+    func testShouldIgnoreSearchTermsLessThanThreeCharacters(){
         network.responses.append(["items" : [["name" : "avocados"], ["name": "apples"]] ])
-        network.responses.append(["items" : [["name" : "apples"]] ])
         
-        repositoryViewModel.searchTerm.value = "a"
         repositoryViewModel.searchTerm.value = "ap"
         
-        expect(self.repositoryViewModel.gists.array).to(equal(["apples"]))
+        expect(self.repositoryViewModel.gists.array).to(equal(["repo one", "repo two"]))
     }
     
-    //todo multiword search
-    //todo no response
+    func testShouldRefineSearchWhilstTyping(){
+        network.responses.append(["items" : [["name" : "abc"], ["name": "abcd"]] ])
+        network.responses.append(["items" : [["name" : "abcd"]] ])
+        
+        repositoryViewModel.searchTerm.value = "abc"
+        repositoryViewModel.searchTerm.value = "abcd"
+        
+        expect(self.repositoryViewModel.gists.array).to(equal(["abcd"]))
+        expect(self.network.request).to(equal("https://api.github.com/search/repositories?q=abcd"))
+    }
+    
+    func testShouldNotDisplayAnythingWhenNoMatchingRepositories(){
+        network.responses.append(["items" : [] ])
+        
+        repositoryViewModel.searchTerm.value = "nonecalledthis"
+        
+        expect(self.repositoryViewModel.gists.array).to(beEmpty())
+    }
+    
+    func testShouldNotDisplayResultsIfResponseIsUnexpected(){
+        network.responses.append([])
+        
+        repositoryViewModel.searchTerm.value = "abcd"
+        
+        expect(self.repositoryViewModel.gists.array).to(equal(["Oops something went wrong!"]))
+    }
+    
+    func testShouldNotDisplayResultsIfItemResponseIsUnexpected(){
+        network.responses.append(["items" : "somethingbad" ])
+        
+        repositoryViewModel.searchTerm.value = "abcd"
+        
+        expect(self.repositoryViewModel.gists.array).to(equal(["Oops something went wrong!"]))
+    }
+    
     //todo swiftyjson?
 }

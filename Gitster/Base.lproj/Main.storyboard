@@ -13,9 +13,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" id="4vQ-KC-8ya">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="vhb-iW-XTA" style="IBUITableViewCellStyleDefault" id="hjC-3C-KI2">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="58" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hjC-3C-KI2" id="ftq-4I-AHg">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -37,8 +43,20 @@
                             <outlet property="delegate" destination="eDF-7R-qIy" id="Td0-aP-Oxn"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="AdJ-Gm-81k" id="G3C-1L-wMR"/>
+                        <outlet property="searchField" destination="4vQ-KC-8ya" id="utr-a6-zRa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAf-BP-eGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="AdJ-Gm-81k">
+                    <connections>
+                        <outlet property="delegate" destination="eDF-7R-qIy" id="lj3-xt-eIF"/>
+                        <outlet property="searchContentsController" destination="eDF-7R-qIy" id="JNU-Cu-EYq"/>
+                        <outlet property="searchResultsDataSource" destination="eDF-7R-qIy" id="CMI-bQ-q7i"/>
+                        <outlet property="searchResultsDelegate" destination="eDF-7R-qIy" id="LML-YB-bvl"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="294" y="296"/>
         </scene>

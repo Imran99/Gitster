@@ -37,16 +37,25 @@ class ViewingGists: XCTestCase {
     
     func testShouldSearchForGists(){
         //arrange
-        network.responses.append(["items" : [["name" : "apples"]] ])
+        network.responses.append(["items" : [["name" : "avocados"], ["name": "apples"]] ])
         
         //act
         gistsViewModel.searchTerm.value = "a"
         
         //assert
+        expect(self.gistsViewModel.gists.array).to(equal(["avocados","apples"]))
+    }
+    
+    func testShouldRefineSearchAsTyping(){
+        network.responses.append(["items" : [["name" : "avocados"], ["name": "apples"]] ])
+        network.responses.append(["items" : [["name" : "apples"]] ])
+        
+        gistsViewModel.searchTerm.value = "a"
+        gistsViewModel.searchTerm.value = "ap"
+        
         expect(self.gistsViewModel.gists.array).to(equal(["apples"]))
     }
     
-    //todo refine search as you type
     //todo multiword search
     //todo no response
     //todo swiftyjson?

@@ -14,11 +14,16 @@ import Nimble
 
 class FakeNetwork : Networking{
     
-    var response: AnyObject!
+    var responses = [AnyObject]()
     private(set) var request: String?
+    
+    private var requestCount = 0;
     
     func request(request: String, response: AnyObject?->()){
         self.request = request
-        response(self.response)
+
+        let cannedResponse = responses[requestCount]
+        response(cannedResponse)
+        requestCount++
     }
 }

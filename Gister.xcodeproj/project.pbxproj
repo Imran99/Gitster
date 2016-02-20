@@ -80,6 +80,22 @@
 			name = Fakes;
 			sourceTree = "<group>";
 		};
+		1D096DBA1C78986200A67C6C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1D1C43881C73D89D00B0C12B /* GistsViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		1D096DBB1C78987400A67C6C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1DC7CEB51C73CAB000C1BF4A /* GistsViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		1DC7CEA71C73CAB000C1BF4A = {
 			isa = PBXGroup;
 			children = (
@@ -103,13 +119,13 @@
 		1DC7CEB21C73CAB000C1BF4A /* Gister */ = {
 			isa = PBXGroup;
 			children = (
+				1D096DBB1C78987400A67C6C /* ViewController */,
+				1D096DBA1C78986200A67C6C /* ViewModel */,
 				1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */,
-				1DC7CEB51C73CAB000C1BF4A /* GistsViewController.swift */,
 				1DC7CEB71C73CAB000C1BF4A /* Main.storyboard */,
 				1DC7CEBA1C73CAB000C1BF4A /* Assets.xcassets */,
 				1DC7CEBC1C73CAB000C1BF4A /* LaunchScreen.storyboard */,
 				1DC7CEBF1C73CAB000C1BF4A /* Info.plist */,
-				1D1C43881C73D89D00B0C12B /* GistsViewModel.swift */,
 				1DCC4FE01C77D72900129422 /* Networking.swift */,
 			);
 			path = Gister;

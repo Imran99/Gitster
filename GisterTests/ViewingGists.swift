@@ -20,22 +20,31 @@ class ViewingGists: XCTestCase {
     override func setUp() {
         super.setUp()
         network = FakeNetwork()
+        network.responses.append([["description": "bob"], ["description": "clive"]])
+        
         gistsViewModel = GistsViewModel(network: network)
+        gistsViewModel.activate()
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
-    func testShouldLoadGists() {
-        //arrange
-        network.response = [["description": "bob"], ["description": "clive"]]
-        
-        //act
-        gistsViewModel.activate()
-        
-        //assert
+    func testShouldLoadGistsOnStart() {
         expect(self.gistsViewModel.gists.array).to(equal(["bob", "clive"]))
         expect(self.network.request).to(equal("https://api.github.com/gists"))
     }
+    
+    func testShouldSearchForGists(){
+        //arrange
+        network.responses.append([["description" : "apples"]])
+        
+        //act
+        gistsViewModel.searchTerm.value = "a"
+        
+        //assert
+        expect(self.gistsViewModel.gists.array).to(equal(["apples"]))
+    }
+    
+    //todo no response
 }

@@ -19,8 +19,8 @@ public class GistsViewModel{
     
     func activate(){
         network.request("https://api.github.com/gists", response: { data in
-            let json = data as! [[String:String]]
-            json.forEach({self.gists.append($0["name"]!)})
+            let json = data as! [[String:AnyObject]]
+            json.forEach({self.gists.append($0["description"] as! String)})
         })
     }
 }

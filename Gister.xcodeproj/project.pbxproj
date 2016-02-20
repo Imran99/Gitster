@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D096DB91C788F5800A67C6C /* FakeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D096DB81C788F5800A67C6C /* FakeNetwork.swift */; };
 		1D1C43891C73D89D00B0C12B /* GistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C43881C73D89D00B0C12B /* GistsViewModel.swift */; };
 		1DC7CEB41C73CAB000C1BF4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */; };
 		1DC7CEB61C73CAB000C1BF4A /* GistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB51C73CAB000C1BF4A /* GistsViewController.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		13028B56F3D794D7D0C35BA6 /* Pods-Gister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gister.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gister/Pods-Gister.release.xcconfig"; sourceTree = "<group>"; };
+		1D096DB81C788F5800A67C6C /* FakeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeNetwork.swift; sourceTree = "<group>"; };
 		1D1C43881C73D89D00B0C12B /* GistsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistsViewModel.swift; sourceTree = "<group>"; };
 		1DC7CEB01C73CAB000C1BF4A /* Gister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D096DB71C788F4600A67C6C /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				1D096DB81C788F5800A67C6C /* FakeNetwork.swift */,
+			);
+			name = Fakes;
+			sourceTree = "<group>";
+		};
 		1DC7CEA71C73CAB000C1BF4A = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		1DC7CEC71C73CAB000C1BF4A /* GisterTests */ = {
 			isa = PBXGroup;
 			children = (
+				1D096DB71C788F4600A67C6C /* Fakes */,
 				1DC7CEC81C73CAB000C1BF4A /* ViewingGists.swift */,
 				1DC7CECA1C73CAB000C1BF4A /* Info.plist */,
 			);
@@ -346,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DC7CEC91C73CAB000C1BF4A /* ViewingGists.swift in Sources */,
+				1D096DB91C788F5800A67C6C /* FakeNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,9 +27,9 @@ class ViewingGists: XCTestCase {
         super.tearDown()
     }
     
-    func testShouldLoadAGist() {
+    func testShouldLoadGists() {
         //arrange
-        network.response = [["name": "bob"], ["name": "clive"]]
+        network.response = [["description": "bob"], ["description": "clive"]]
         
         //act
         gistsViewModel.activate()
@@ -37,16 +37,5 @@ class ViewingGists: XCTestCase {
         //assert
         expect(self.gistsViewModel.gists.array).to(equal(["bob", "clive"]))
         expect(self.network.request).to(equal("https://api.github.com/gists"))
-    }
-}
-
-class FakeNetwork : Networking{
-    
-    var response: AnyObject!
-    private(set) var request: String?
-    
-    func request(request: String, response: AnyObject?->()){
-        self.request = request
-        response(self.response)
     }
 }

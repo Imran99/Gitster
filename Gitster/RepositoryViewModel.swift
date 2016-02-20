@@ -9,7 +9,7 @@
 import Bond
 
 //todo add a protocol to vm so can stub for ui
-public class GistsViewModel{
+public class RepositoryViewModel{
     
     let gists = ObservableArray<String>()
     let searchTerm = Observable<String?>(nil)

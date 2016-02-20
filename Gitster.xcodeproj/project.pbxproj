@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1D096DB91C788F5800A67C6C /* FakeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D096DB81C788F5800A67C6C /* FakeNetwork.swift */; };
-		1D1C43891C73D89D00B0C12B /* GistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C43881C73D89D00B0C12B /* GistsViewModel.swift */; };
-		1DC7CEB41C73CAB000C1BF4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */; };
-		1DC7CEB61C73CAB000C1BF4A /* GistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB51C73CAB000C1BF4A /* GistsViewController.swift */; };
-		1DC7CEB91C73CAB000C1BF4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB71C73CAB000C1BF4A /* Main.storyboard */; };
-		1DC7CEBB1C73CAB000C1BF4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC7CEBA1C73CAB000C1BF4A /* Assets.xcassets */; };
-		1DC7CEBE1C73CAB000C1BF4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC7CEBC1C73CAB000C1BF4A /* LaunchScreen.storyboard */; };
+		1DAB12171C78C52400E53951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAB12131C78C52400E53951 /* Main.storyboard */; };
+		1DAB12181C78C52400E53951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAB12151C78C52400E53951 /* LaunchScreen.storyboard */; };
+		1DAB121B1C78C72000E53951 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DAB121A1C78C72000E53951 /* Images.xcassets */; };
+		1DAB121C1C78C7B000E53951 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB51C73CAB000C1BF4A /* RepositoryViewController.swift */; };
+		1DAB121D1C78C7B000E53951 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C43881C73D89D00B0C12B /* RepositoryViewModel.swift */; };
+		1DAB121E1C78C7B000E53951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */; };
+		1DAB121F1C78C7B000E53951 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCC4FE01C77D72900129422 /* Networking.swift */; };
 		1DC7CEC91C73CAB000C1BF4A /* ViewingGists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEC81C73CAB000C1BF4A /* ViewingGists.swift */; };
-		1DCC4FE11C77D72900129422 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCC4FE01C77D72900129422 /* Networking.swift */; };
-		66B3DD43E597B82905DC6705 /* Pods_GisterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E39CC21060B80A1BD7E84D9 /* Pods_GisterTests.framework */; };
-		FF5059F456C8D76BD0791C85 /* Pods_Gister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2835E644F4658D2AA8DB2FF9 /* Pods_Gister.framework */; };
+		6B5A8F50FA9BCD2DEDBE8C0D /* Pods_GitsterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6F486D4580F1500D999C07 /* Pods_GitsterTests.framework */; };
+		81E57A8C06F6EFBAE26D9926 /* Pods_Gitster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B64AD88E3EE3738121B9C8 /* Pods_Gitster.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,25 +31,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13028B56F3D794D7D0C35BA6 /* Pods-Gister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gister.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gister/Pods-Gister.release.xcconfig"; sourceTree = "<group>"; };
-		1D096DB81C788F5800A67C6C /* FakeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeNetwork.swift; sourceTree = "<group>"; };
-		1D1C43881C73D89D00B0C12B /* GistsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistsViewModel.swift; sourceTree = "<group>"; };
-		1DC7CEB01C73CAB000C1BF4A /* Gister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gister.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1DC7CEB51C73CAB000C1BF4A /* GistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsViewController.swift; sourceTree = "<group>"; };
-		1DC7CEB81C73CAB000C1BF4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1DC7CEBA1C73CAB000C1BF4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1DC7CEBD1C73CAB000C1BF4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1DC7CEBF1C73CAB000C1BF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DC7CEC41C73CAB000C1BF4A /* GisterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GisterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DC7CEC81C73CAB000C1BF4A /* ViewingGists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewingGists.swift; sourceTree = "<group>"; };
-		1DC7CECA1C73CAB000C1BF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DCC4FE01C77D72900129422 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		2835E644F4658D2AA8DB2FF9 /* Pods_Gister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FEA14A08DEAAD6492EB64D8 /* Pods-GisterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GisterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GisterTests/Pods-GisterTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9E39CC21060B80A1BD7E84D9 /* Pods_GisterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GisterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E117613D19B643A3AE962CD3 /* Pods-GisterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GisterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GisterTests/Pods-GisterTests.release.xcconfig"; sourceTree = "<group>"; };
-		E8A21F2B69EC7485A69A7562 /* Pods-Gister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gister.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gister/Pods-Gister.debug.xcconfig"; sourceTree = "<group>"; };
+		1B6F486D4580F1500D999C07 /* Pods_GitsterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitsterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D096DB81C788F5800A67C6C /* FakeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeNetwork.swift; path = GitsterTests/FakeNetwork.swift; sourceTree = SOURCE_ROOT; };
+		1D1C43881C73D89D00B0C12B /* RepositoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepositoryViewModel.swift; path = Gitster/RepositoryViewModel.swift; sourceTree = SOURCE_ROOT; };
+		1DAB12141C78C52400E53951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Gitster/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		1DAB12161C78C52400E53951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Gitster/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		1DAB121A1C78C72000E53951 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Gitster/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		1DC7CEB01C73CAB000C1BF4A /* Gitster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gitster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Gitster/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		1DC7CEB51C73CAB000C1BF4A /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RepositoryViewController.swift; path = Gitster/RepositoryViewController.swift; sourceTree = SOURCE_ROOT; };
+		1DC7CEBF1C73CAB000C1BF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Gitster/Info.plist; sourceTree = "<group>"; };
+		1DC7CEC41C73CAB000C1BF4A /* GitsterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitsterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DC7CEC81C73CAB000C1BF4A /* ViewingGists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewingGists.swift; path = GitsterTests/ViewingGists.swift; sourceTree = SOURCE_ROOT; };
+		1DC7CECA1C73CAB000C1BF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GitsterTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		1DCC4FE01C77D72900129422 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Networking.swift; path = Gitster/Networking.swift; sourceTree = SOURCE_ROOT; };
+		524523B04C2185E836E7A4F0 /* Pods-Gitster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gitster/Pods-Gitster.debug.xcconfig"; sourceTree = "<group>"; };
+		592DBCCE1352D3F6E87D1535 /* Pods-Gitster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitster.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gitster/Pods-Gitster.release.xcconfig"; sourceTree = "<group>"; };
+		70B64AD88E3EE3738121B9C8 /* Pods_Gitster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gitster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE64B2B59220A5D4A9582CC /* Pods-GitsterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitsterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitsterTests/Pods-GitsterTests.release.xcconfig"; sourceTree = "<group>"; };
+		AACECACD3A9A2CAF1525F392 /* Pods-GitsterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitsterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitsterTests/Pods-GitsterTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF5059F456C8D76BD0791C85 /* Pods_Gister.framework in Frameworks */,
+				81E57A8C06F6EFBAE26D9926 /* Pods_Gitster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66B3DD43E597B82905DC6705 /* Pods_GisterTests.framework in Frameworks */,
+				6B5A8F50FA9BCD2DEDBE8C0D /* Pods_GitsterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 		1D096DBA1C78986200A67C6C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1D1C43881C73D89D00B0C12B /* GistsViewModel.swift */,
+				1D1C43881C73D89D00B0C12B /* RepositoryViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -91,7 +91,7 @@
 		1D096DBB1C78987400A67C6C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1DC7CEB51C73CAB000C1BF4A /* GistsViewController.swift */,
+				1DC7CEB51C73CAB000C1BF4A /* RepositoryViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -99,35 +99,36 @@
 		1DC7CEA71C73CAB000C1BF4A = {
 			isa = PBXGroup;
 			children = (
-				1DC7CEB21C73CAB000C1BF4A /* Gister */,
+				1DC7CEB21C73CAB000C1BF4A /* Gitster */,
 				1DC7CEC71C73CAB000C1BF4A /* GisterTests */,
 				1DC7CEB11C73CAB000C1BF4A /* Products */,
-				8EBB304F9E3138C83D633F37 /* Pods */,
 				8213637B3F48FD82D330B2A7 /* Frameworks */,
+				50ACE7CB49F53B45EE1062FF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		1DC7CEB11C73CAB000C1BF4A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1DC7CEB01C73CAB000C1BF4A /* Gister.app */,
-				1DC7CEC41C73CAB000C1BF4A /* GisterTests.xctest */,
+				1DC7CEB01C73CAB000C1BF4A /* Gitster.app */,
+				1DC7CEC41C73CAB000C1BF4A /* GitsterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1DC7CEB21C73CAB000C1BF4A /* Gister */ = {
+		1DC7CEB21C73CAB000C1BF4A /* Gitster */ = {
 			isa = PBXGroup;
 			children = (
+				1DAB12131C78C52400E53951 /* Main.storyboard */,
+				1DAB12151C78C52400E53951 /* LaunchScreen.storyboard */,
 				1D096DBB1C78987400A67C6C /* ViewController */,
 				1D096DBA1C78986200A67C6C /* ViewModel */,
 				1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */,
-				1DC7CEB71C73CAB000C1BF4A /* Main.storyboard */,
-				1DC7CEBA1C73CAB000C1BF4A /* Assets.xcassets */,
-				1DC7CEBC1C73CAB000C1BF4A /* LaunchScreen.storyboard */,
 				1DC7CEBF1C73CAB000C1BF4A /* Info.plist */,
 				1DCC4FE01C77D72900129422 /* Networking.swift */,
+				1DAB121A1C78C72000E53951 /* Images.xcassets */,
 			);
+			name = Gitster;
 			path = Gister;
 			sourceTree = "<group>";
 		};
@@ -141,52 +142,52 @@
 			path = GisterTests;
 			sourceTree = "<group>";
 		};
+		50ACE7CB49F53B45EE1062FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				524523B04C2185E836E7A4F0 /* Pods-Gitster.debug.xcconfig */,
+				592DBCCE1352D3F6E87D1535 /* Pods-Gitster.release.xcconfig */,
+				AACECACD3A9A2CAF1525F392 /* Pods-GitsterTests.debug.xcconfig */,
+				9DE64B2B59220A5D4A9582CC /* Pods-GitsterTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8213637B3F48FD82D330B2A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2835E644F4658D2AA8DB2FF9 /* Pods_Gister.framework */,
-				9E39CC21060B80A1BD7E84D9 /* Pods_GisterTests.framework */,
+				70B64AD88E3EE3738121B9C8 /* Pods_Gitster.framework */,
+				1B6F486D4580F1500D999C07 /* Pods_GitsterTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8EBB304F9E3138C83D633F37 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E8A21F2B69EC7485A69A7562 /* Pods-Gister.debug.xcconfig */,
-				13028B56F3D794D7D0C35BA6 /* Pods-Gister.release.xcconfig */,
-				3FEA14A08DEAAD6492EB64D8 /* Pods-GisterTests.debug.xcconfig */,
-				E117613D19B643A3AE962CD3 /* Pods-GisterTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1DC7CEAF1C73CAB000C1BF4A /* Gister */ = {
+		1DC7CEAF1C73CAB000C1BF4A /* Gitster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DC7CECD1C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "Gister" */;
+			buildConfigurationList = 1DC7CECD1C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "Gitster" */;
 			buildPhases = (
-				8D25A1B6A008E75624796A90 /* Check Pods Manifest.lock */,
+				FC6BBE3117F88D7C2243F671 /* Check Pods Manifest.lock */,
 				1DC7CEAC1C73CAB000C1BF4A /* Sources */,
 				1DC7CEAD1C73CAB000C1BF4A /* Frameworks */,
 				1DC7CEAE1C73CAB000C1BF4A /* Resources */,
-				FF71DA291EFE75534EACD25E /* Embed Pods Frameworks */,
-				EE54955DAB4165F6D39D1B96 /* Copy Pods Resources */,
+				E6E0B8EE67FBECCCE3741B58 /* Embed Pods Frameworks */,
+				C735FE38F8035A25627FDC39 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Gister;
+			name = Gitster;
 			productName = Gister;
-			productReference = 1DC7CEB01C73CAB000C1BF4A /* Gister.app */;
+			productReference = 1DC7CEB01C73CAB000C1BF4A /* Gitster.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1DC7CEC31C73CAB000C1BF4A /* GisterTests */ = {
+		1DC7CEC31C73CAB000C1BF4A /* GitsterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DC7CED01C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "GisterTests" */;
+			buildConfigurationList = 1DC7CED01C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "GitsterTests" */;
 			buildPhases = (
 				9D9D0EE213053D4D849F634D /* Check Pods Manifest.lock */,
 				1DC7CEC01C73CAB000C1BF4A /* Sources */,
@@ -200,9 +201,9 @@
 			dependencies = (
 				1DC7CEC61C73CAB000C1BF4A /* PBXTargetDependency */,
 			);
-			name = GisterTests;
+			name = GitsterTests;
 			productName = GisterTests;
-			productReference = 1DC7CEC41C73CAB000C1BF4A /* GisterTests.xctest */;
+			productReference = 1DC7CEC41C73CAB000C1BF4A /* GitsterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +225,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1DC7CEAB1C73CAB000C1BF4A /* Build configuration list for PBXProject "Gister" */;
+			buildConfigurationList = 1DC7CEAB1C73CAB000C1BF4A /* Build configuration list for PBXProject "Gitster" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -237,8 +238,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1DC7CEAF1C73CAB000C1BF4A /* Gister */,
-				1DC7CEC31C73CAB000C1BF4A /* GisterTests */,
+				1DC7CEAF1C73CAB000C1BF4A /* Gitster */,
+				1DC7CEC31C73CAB000C1BF4A /* GitsterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,9 +249,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DC7CEBE1C73CAB000C1BF4A /* LaunchScreen.storyboard in Resources */,
-				1DC7CEBB1C73CAB000C1BF4A /* Assets.xcassets in Resources */,
-				1DC7CEB91C73CAB000C1BF4A /* Main.storyboard in Resources */,
+				1DAB121B1C78C72000E53951 /* Images.xcassets in Resources */,
+				1DAB12181C78C52400E53951 /* LaunchScreen.storyboard in Resources */,
+				1DAB12171C78C52400E53951 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,22 +277,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GisterTests/Pods-GisterTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D25A1B6A008E75624796A90 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitsterTests/Pods-GitsterTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9D9D0EE213053D4D849F634D /* Check Pods Manifest.lock */ = {
@@ -321,10 +307,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GisterTests/Pods-GisterTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitsterTests/Pods-GitsterTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EE54955DAB4165F6D39D1B96 /* Copy Pods Resources */ = {
+		C735FE38F8035A25627FDC39 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -336,10 +322,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gister/Pods-Gister-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gitster/Pods-Gitster-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF71DA291EFE75534EACD25E /* Embed Pods Frameworks */ = {
+		E6E0B8EE67FBECCCE3741B58 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -351,7 +337,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gister/Pods-Gister-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gitster/Pods-Gitster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC6BBE3117F88D7C2243F671 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -361,10 +362,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DC7CEB61C73CAB000C1BF4A /* GistsViewController.swift in Sources */,
-				1D1C43891C73D89D00B0C12B /* GistsViewModel.swift in Sources */,
-				1DC7CEB41C73CAB000C1BF4A /* AppDelegate.swift in Sources */,
-				1DCC4FE11C77D72900129422 /* Networking.swift in Sources */,
+				1DAB121C1C78C7B000E53951 /* RepositoryViewController.swift in Sources */,
+				1DAB121D1C78C7B000E53951 /* RepositoryViewModel.swift in Sources */,
+				1DAB121E1C78C7B000E53951 /* AppDelegate.swift in Sources */,
+				1DAB121F1C78C7B000E53951 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,24 +383,24 @@
 /* Begin PBXTargetDependency section */
 		1DC7CEC61C73CAB000C1BF4A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1DC7CEAF1C73CAB000C1BF4A /* Gister */;
+			target = 1DC7CEAF1C73CAB000C1BF4A /* Gitster */;
 			targetProxy = 1DC7CEC51C73CAB000C1BF4A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1DC7CEB71C73CAB000C1BF4A /* Main.storyboard */ = {
+		1DAB12131C78C52400E53951 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1DC7CEB81C73CAB000C1BF4A /* Base */,
+				1DAB12141C78C52400E53951 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		1DC7CEBC1C73CAB000C1BF4A /* LaunchScreen.storyboard */ = {
+		1DAB12151C78C52400E53951 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1DC7CEBD1C73CAB000C1BF4A /* Base */,
+				1DAB12161C78C52400E53951 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -492,58 +493,60 @@
 		};
 		1DC7CECE1C73CAB000C1BF4A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8A21F2B69EC7485A69A7562 /* Pods-Gister.debug.xcconfig */;
+			baseConfigurationReference = 524523B04C2185E836E7A4F0 /* Pods-Gitster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Gister/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/Gitster/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.Gister;
+				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.Gitster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		1DC7CECF1C73CAB000C1BF4A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13028B56F3D794D7D0C35BA6 /* Pods-Gister.release.xcconfig */;
+			baseConfigurationReference = 592DBCCE1352D3F6E87D1535 /* Pods-Gitster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Gister/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/Gitster/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.Gister;
+				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.Gitster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 		1DC7CED11C73CAB000C1BF4A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FEA14A08DEAAD6492EB64D8 /* Pods-GisterTests.debug.xcconfig */;
+			baseConfigurationReference = AACECACD3A9A2CAF1525F392 /* Pods-GitsterTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = GisterTests/Info.plist;
+				INFOPLIST_FILE = GitsterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.GisterTests;
+				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.GitsterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gister.app/Gister";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gitster.app/Gitster";
 			};
 			name = Debug;
 		};
 		1DC7CED21C73CAB000C1BF4A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E117613D19B643A3AE962CD3 /* Pods-GisterTests.release.xcconfig */;
+			baseConfigurationReference = 9DE64B2B59220A5D4A9582CC /* Pods-GitsterTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = GisterTests/Info.plist;
+				INFOPLIST_FILE = GitsterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.GisterTests;
+				PRODUCT_BUNDLE_IDENTIFIER = AppBrains.GitsterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gister.app/Gister";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gitster.app/Gitster";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DC7CEAB1C73CAB000C1BF4A /* Build configuration list for PBXProject "Gister" */ = {
+		1DC7CEAB1C73CAB000C1BF4A /* Build configuration list for PBXProject "Gitster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DC7CECB1C73CAB000C1BF4A /* Debug */,
@@ -552,7 +555,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DC7CECD1C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "Gister" */ = {
+		1DC7CECD1C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "Gitster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DC7CECE1C73CAB000C1BF4A /* Debug */,
@@ -561,7 +564,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DC7CED01C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "GisterTests" */ = {
+		1DC7CED01C73CAB000C1BF4A /* Build configuration list for PBXNativeTarget "GitsterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DC7CED11C73CAB000C1BF4A /* Debug */,

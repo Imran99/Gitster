@@ -10,7 +10,7 @@ import XCTest
 import Alamofire
 import Bond
 import Nimble
-@testable import Gister
+@testable import Gitster
 
 class FakeNetwork : Networking{
     

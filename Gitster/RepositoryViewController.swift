@@ -9,9 +9,9 @@
 import UIKit
 import Bond
 
-class GistsViewController: UITableViewController {
+class RepositoryViewController: UITableViewController {
 
-    private let viewModel = GistsViewModel(network: Network())
+    private let viewModel = RepositoryViewModel(network: Network())
     
     override func viewDidLoad() {
         super.viewDidLoad()

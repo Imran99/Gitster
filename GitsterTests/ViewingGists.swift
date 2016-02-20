@@ -10,20 +10,20 @@ import XCTest
 import Alamofire
 import Bond
 import Nimble
-@testable import Gister
+@testable import Gitster
 
 class ViewingGists: XCTestCase {
     
     var network: FakeNetwork!
-    var gistsViewModel: GistsViewModel!
+    var repositoryViewModel: RepositoryViewModel!
     
     override func setUp() {
         super.setUp()
         network = FakeNetwork()
         network.responses.append([["name": "repo one"], ["name": "repo two"]])
         
-        gistsViewModel = GistsViewModel(network: network)
-        gistsViewModel.activate()
+        repositoryViewModel = RepositoryViewModel(network: network)
+        repositoryViewModel.activate()
     }
     
     override func tearDown() {
@@ -31,7 +31,7 @@ class ViewingGists: XCTestCase {
     }
     
     func testShouldLoadGistsOnStart() {
-        expect(self.gistsViewModel.gists.array).to(equal(["repo one", "repo two"]))
+        expect(self.repositoryViewModel.gists.array).to(equal(["repo one", "repo two"]))
         expect(self.network.request).to(equal("https://api.github.com/repositories"))
     }
     
@@ -40,20 +40,20 @@ class ViewingGists: XCTestCase {
         network.responses.append(["items" : [["name" : "avocados"], ["name": "apples"]] ])
         
         //act
-        gistsViewModel.searchTerm.value = "a"
+        repositoryViewModel.searchTerm.value = "a"
         
         //assert
-        expect(self.gistsViewModel.gists.array).to(equal(["avocados","apples"]))
+        expect(self.repositoryViewModel.gists.array).to(equal(["avocados","apples"]))
     }
     
     func testShouldRefineSearchAsTyping(){
         network.responses.append(["items" : [["name" : "avocados"], ["name": "apples"]] ])
         network.responses.append(["items" : [["name" : "apples"]] ])
         
-        gistsViewModel.searchTerm.value = "a"
-        gistsViewModel.searchTerm.value = "ap"
+        repositoryViewModel.searchTerm.value = "a"
+        repositoryViewModel.searchTerm.value = "ap"
         
-        expect(self.gistsViewModel.gists.array).to(equal(["apples"]))
+        expect(self.repositoryViewModel.gists.array).to(equal(["apples"]))
     }
     
     //todo multiword search

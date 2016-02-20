@@ -3,12 +3,12 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'Gister' do
+target 'Gitster' do
 	pod 'Bond', '~> 4.0'
 	pod 'Alamofire', '~> 3.0'
 end
 
-target 'GisterTests' do
+target 'GitsterTests' do
 	pod 'Bond', '~> 4.0'
 	pod 'Alamofire', '~> 3.0'
 	pod 'Nimble', '~> 3.1.0'

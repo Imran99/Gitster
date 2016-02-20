@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Repository View Controller-->
+        <!--Git Search View Controller-->
         <scene sceneID="agg-Eu-fbD">
             <objects>
-                <tableViewController id="eDF-7R-qIy" customClass="RepositoryViewController" customModule="Gitster" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="eDF-7R-qIy" customClass="GitSearchViewController" customModule="Gitster" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eXH-Yx-HQg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

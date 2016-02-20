@@ -9,10 +9,11 @@
 import UIKit
 import Bond
 
-class RepositoryViewController: UITableViewController {
+class GitSearchViewController: UITableViewController {
 
     @IBOutlet var searchField: UITextField!
-    private let viewModel = RepositoryViewModel(network: Network())
+    
+    private let viewModel = GitSearchViewModel(network: Network())
     
     override func viewDidLoad() {
         super.viewDidLoad()

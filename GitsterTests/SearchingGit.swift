@@ -54,7 +54,7 @@ class SearchingGit: XCTestCase {
         let expected = [
             RepositorySummary(name: "apple martini", url: "url one"),
             RepositorySummary(name: "apples", url: "url two")]
-        expect(self.gitSearchViewModel.gists.array).to(equal(expected))
+        expect(self.gitSearchViewModel.gists.array).toEventually(equal(expected), timeout: 1)
         expect(self.network.request).to(equal("https://api.github.com/search/repositories"))
         expect(self.network.requestParams).to(equal(["q":"app"]))
     }
@@ -74,27 +74,12 @@ class SearchingGit: XCTestCase {
         expect(self.gitSearchViewModel.gists.array).to(equal(expected))
     }
     
-    func testShouldRefineSearchWhilstTyping(){
-        network.responses.append(["items" : [
-            ["name" : "abc", "url" : "url one"],
-            ["name": "abcd", "url":"url two"]
-            ]])
-        network.responses.append(["items" :[
-            ["name" : "abcd","url":"url two"]
-            ]])
-        
-        gitSearchViewModel.searchTerm.value = "abc"
-        gitSearchViewModel.searchTerm.value = "abcd"
-        
-        expect(self.gitSearchViewModel.gists.array).to(equal([RepositorySummary(name: "abcd", url: "url two")]))
-    }
-    
     func testShouldNotDisplayAnythingWhenNoMatchingRepositories(){
         network.responses.append(["items" : [] ])
         
         gitSearchViewModel.searchTerm.value = "nonecalledthis"
         
-        expect(self.gitSearchViewModel.gists.array).to(beEmpty())
+        expect(self.gitSearchViewModel.gists.array).toEventually(beEmpty(), timeout: 1)
     }
     
     func testShouldDisplayLoadingIndicatorWhenSearchInProgress(){
@@ -111,7 +96,7 @@ class SearchingGit: XCTestCase {
         
         gitSearchViewModel.searchTerm.value = "abcd"
         
-        expect(self.gitSearchViewModel.gists.array).to(beEmpty())
+        expect(self.gitSearchViewModel.gists.array).toEventually(beEmpty(), timeout: 1)
     }
     
     func testShouldNotDisplayResultsIfItemResponseIsUnexpected(){
@@ -119,7 +104,7 @@ class SearchingGit: XCTestCase {
         
         gitSearchViewModel.searchTerm.value = "abcd"
         
-        expect(self.gitSearchViewModel.gists.array).to(beEmpty())
+        expect(self.gitSearchViewModel.gists.array).toEventually(beEmpty(), timeout: 1)
     }
     
     func testShouldDisplayErrorOnSearchWhenRateLimitExceeded(){

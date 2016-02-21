@@ -37,8 +37,7 @@ class GitSearchViewModel{
         searchTerm
             .ignoreNil()
             .filter({$0.characters.count > 2})
-            //removed for now to avoid unit test issues
-            //.throttle(0.5, queue: Queue.Main)
+            .throttle(0.5, queue: Queue.Main)
             .observe({[weak self] in
                 self?.searchInProgress.next(true)
                 let url = "https://api.github.com/search/repositories"

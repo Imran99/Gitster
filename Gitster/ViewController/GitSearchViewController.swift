@@ -12,6 +12,7 @@ import Bond
 class GitSearchViewController: UITableViewController, BNDTableViewProxyDataSource {
 
     @IBOutlet var searchField: UITextField!
+    @IBOutlet var loadingSpinner: UIActivityIndicatorView!
     
     private let viewModel = GitSearchViewModel(network: Network())
     
@@ -43,6 +44,10 @@ class GitSearchViewController: UITableViewController, BNDTableViewProxyDataSourc
         
         searchField.bnd_text
             .bindTo(viewModel.searchTerm)
+        
+        viewModel.searchInProgress
+            .map{!$0}
+            .bindTo(loadingSpinner.bnd_hidden)
     }
     
     private func displayError(error: String){

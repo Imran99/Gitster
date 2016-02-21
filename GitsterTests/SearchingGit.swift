@@ -97,6 +97,15 @@ class SearchingGit: XCTestCase {
         expect(self.gitSearchViewModel.gists.array).to(beEmpty())
     }
     
+    func testShouldDisplayLoadingIndicatorWhenSearchInProgress(){
+        network.responses.append([["name": "repo one", "url":"url one"]])
+        var didDisplayLoadingIndicator = false
+        gitSearchViewModel.searchInProgress.observe{_ in didDisplayLoadingIndicator = true}
+        
+        gitSearchViewModel.searchTerm.value = "search"
+        expect(didDisplayLoadingIndicator).toEventually(equal(true), timeout: 1)
+    }
+    
     func testShouldNotDisplayResultsIfResponseIsUnexpected(){
         network.responses.append([])
         

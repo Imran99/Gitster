@@ -15,6 +15,7 @@ class GitSearchViewModel{
     let gists = ObservableArray<RepositorySummary>()
     let searchTerm = Observable<String?>(nil)
     let error = EventProducer<String>()
+    let searchInProgress = Observable<Bool>(false)
     
     private let network: Networking
     
@@ -39,6 +40,7 @@ class GitSearchViewModel{
             //removed for now to avoid unit test issues
             //.throttle(0.5, queue: Queue.Main)
             .observe({[weak self] in
+                self?.searchInProgress.next(true)
                 let url = "https://api.github.com/search/repositories"
                 print(url)
                 self?.network.request(url, paramaters: ["q":$0], response: self!.displaySearchResults)
@@ -46,6 +48,7 @@ class GitSearchViewModel{
     }
     
     private func displaySearchResults(json: JSON){
+        searchInProgress.next(false)
         self.gists.removeAll()
         handleIfError(json)
         json["items"].forEach{ _, child in

@@ -12,7 +12,7 @@ import Bond
 import Nimble
 @testable import Gitster
 
-class ViewingGists: XCTestCase {
+class SearchingGit: XCTestCase {
     
     var network: FakeNetwork!
     var gitSearchViewModel: GitSearchViewModel!
@@ -44,6 +44,8 @@ class ViewingGists: XCTestCase {
         
         //assert
         expect(self.gitSearchViewModel.gists.array).to(equal(["apple martini","apples"]))
+        expect(self.network.request).to(equal("https://api.github.com/search/repositories"))
+        expect(self.network.requestParams).to(equal(["q":"app"]))
     }
     
     
@@ -62,8 +64,7 @@ class ViewingGists: XCTestCase {
         gitSearchViewModel.searchTerm.value = "abc"
         gitSearchViewModel.searchTerm.value = "abcd"
         
-    expect(self.gitSearchViewModel.gists.array).to(equal(["abcd"]))
-        expect(self.network.request).to(equal("https://api.github.com/search/repositories?q=abcd"))
+        expect(self.gitSearchViewModel.gists.array).to(equal(["abcd"]))
     }
     
     func testShouldNotDisplayAnythingWhenNoMatchingRepositories(){
@@ -88,14 +89,6 @@ class ViewingGists: XCTestCase {
         gitSearchViewModel.searchTerm.value = "abcd"
         
         expect(self.gitSearchViewModel.gists.array).to(equal(["Oops! Check the log for details."]))
-    }
-    
-    func testShouldAllowMultiwordSearch(){
-        network.responses.append(["items" : [["name" : "apple martini"]] ])
-        
-        gitSearchViewModel.searchTerm.value = "apple m"
-        
-        expect(self.gitSearchViewModel.gists.array).to(equal(["apple martini"]))
     }
     
     //todo swiftyjson?

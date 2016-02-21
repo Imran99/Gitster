@@ -10,16 +10,16 @@ import Foundation
 import Alamofire
 
 public protocol Networking{
-    func request(url: String, response: AnyObject?->())
+    func request(url: String, paramaters: [String:String], response: AnyObject?->())
 }
 
 //todo error handling
 //todo headers
 //todo params
 class Network : Networking{
-    func request(url: String, response: AnyObject?->()) {
+    func request(url: String, paramaters: [String:String], response: AnyObject?->()) {
         Alamofire
-            .request(.GET, url)
+            .request(.GET, url, parameters: paramaters)
             .responseJSON(completionHandler: { r in
                 
                 switch r.result {

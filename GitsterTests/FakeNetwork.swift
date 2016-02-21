@@ -16,12 +16,13 @@ class FakeNetwork : Networking{
     
     var responses = [AnyObject]()
     private(set) var request: String?
+    private(set) var requestParams: [String:String]?
     
     private var requestCount = 0;
     
-    func request(request: String, response: AnyObject?->()){
+    func request(request: String, paramaters: [String:String], response: AnyObject?->()){
         self.request = request
-
+        self.requestParams = paramaters
         let cannedResponse = responses[requestCount]
         response(cannedResponse)
         requestCount++

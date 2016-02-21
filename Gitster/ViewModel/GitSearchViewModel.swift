@@ -20,8 +20,9 @@ class GitSearchViewModel{
         self.network = network
     }
     
+    //todo use insert contents instead
     func activate(){
-        network.request("https://api.github.com/repositories", response: { data in
+        network.request("https://api.github.com/repositories", paramaters: [:], response: { data in
             let json = data as! [[String:AnyObject]]
             json.forEach({self.gists.append($0["name"] as! String)})
         })
@@ -32,10 +33,10 @@ class GitSearchViewModel{
             .filter({$0.characters.count > 2})
             //removed for now to avoid unit test issues
             //.throttle(0.5, queue: Queue.Main)
-            .observe({
-                let url = "https://api.github.com/search/repositories?q=" + $0
+            .observe({[weak self] in
+                let url = "https://api.github.com/search/repositories"
                 print(url)
-                self.network.request(url, response: self.displaySearchResults)
+                self?.network.request(url, paramaters: ["q":$0], response: self!.displaySearchResults)
             })
     }
     

@@ -6,6 +6,7 @@ use_frameworks!
 target 'Gitster' do
 	pod 'Bond', '~> 4.0'
 	pod 'Alamofire', '~> 3.0'
+    pod 'SwiftyJSON'
 end
 
 target 'GitsterTests' do

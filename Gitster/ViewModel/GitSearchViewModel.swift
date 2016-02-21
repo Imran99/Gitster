@@ -7,6 +7,7 @@
 //
 
 import Bond
+import SwiftyJSON
 
 //todo add a protocol to vm so can stub for ui
 class GitSearchViewModel{
@@ -23,11 +24,17 @@ class GitSearchViewModel{
     //todo use insert contents instead
     func activate(){
         network.request("https://api.github.com/repositories", paramaters: [:], response: { data in
-            let json = data as! [[String:AnyObject]]
-            json.forEach({self.gists.append($0["name"] as! String)})
+            guard let d = data else{
+                return
+            }
+            let json = JSON(d)
+            json.forEach{ _, child in
+                if let name = child["name"].string{
+                    self.gists.append(name)
+                }
+            }
         })
         
-        //todo add params
         searchTerm
             .ignoreNil()
             .filter({$0.characters.count > 2})
@@ -48,16 +55,16 @@ class GitSearchViewModel{
             print(data)
         }
         
-        guard let json = data as? [String:AnyObject] else{
+        guard let d = data else{
             handleError()
             return
         }
         
-        guard let items = json["items"] as? [[String:AnyObject]] else{
-            handleError()
-            return
+        let json = JSON(d)
+        json["items"].forEach{ _, child in
+            if let name = child["name"].string{
+                self.gists.append(name)
+            }
         }
-        
-        items.forEach({self.gists.append($0["name"] as! String)})
     }
 }

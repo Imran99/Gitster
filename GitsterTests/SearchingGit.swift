@@ -80,7 +80,7 @@ class SearchingGit: XCTestCase {
         
         gitSearchViewModel.searchTerm.value = "abcd"
         
-        expect(self.gitSearchViewModel.gists.array).to(equal(["Oops! Check the log for details."]))
+        expect(self.gitSearchViewModel.gists.array).to(beEmpty())
     }
     
     func testShouldNotDisplayResultsIfItemResponseIsUnexpected(){
@@ -88,7 +88,7 @@ class SearchingGit: XCTestCase {
         
         gitSearchViewModel.searchTerm.value = "abcd"
         
-        expect(self.gitSearchViewModel.gists.array).to(equal(["Oops! Check the log for details."]))
+        expect(self.gitSearchViewModel.gists.array).to(beEmpty())
     }
     
     //todo swiftyjson?

@@ -9,7 +9,7 @@
 import UIKit
 import Bond
 
-class GitSearchViewController: UITableViewController {
+class GitSearchViewController: UITableViewController, BNDTableViewProxyDataSource {
 
     @IBOutlet var searchField: UITextField!
     
@@ -29,7 +29,7 @@ class GitSearchViewController: UITableViewController {
     private func bind(){
         viewModel.gists
             .lift()
-            .bindTo(tableView){ indexPath, dataSource, tableView in
+            .bindTo(tableView, proxyDataSource: self) { indexPath, dataSource, tableView in
                 let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell))!
                 cell.textLabel!.text = dataSource[indexPath.section][indexPath.row]
                 return cell
@@ -53,7 +53,11 @@ class GitSearchViewController: UITableViewController {
         
         alertController.addAction(actionOk)
     }
-
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false;
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -23,7 +23,7 @@ class GitSearchViewController: UITableViewController, BNDTableViewProxyDataSourc
     }
     
     private func setupView(){
-        self.tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
+        //don animations and view type stuff here
     }
     
     private func bind(){

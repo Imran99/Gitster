@@ -5,7 +5,7 @@ branches:
  - master
 
 before_install:
-  - gem install cocoapods
+  - gem install cocoapods -v '0.32.1'
 
 xcode_project: Gitster.xcodeproj
 xcode_scheme: GitsterTests

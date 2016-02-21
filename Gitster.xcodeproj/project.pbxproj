@@ -16,6 +16,8 @@
 		1DAB121E1C78C7B000E53951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */; };
 		1DAB121F1C78C7B000E53951 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCC4FE01C77D72900129422 /* Networking.swift */; };
 		1DC7CEC91C73CAB000C1BF4A /* SearchingGit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEC81C73CAB000C1BF4A /* SearchingGit.swift */; };
+		1DD1C3A91C79DCC400261B5E /* ViewingARepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD1C3A81C79DCC400261B5E /* ViewingARepository.swift */; };
+		1DD1C3AB1C79DD0200261B5E /* GitDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD1C3AA1C79DD0200261B5E /* GitDetailsViewModel.swift */; };
 		6B5A8F50FA9BCD2DEDBE8C0D /* Pods_GitsterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6F486D4580F1500D999C07 /* Pods_GitsterTests.framework */; };
 		81E57A8C06F6EFBAE26D9926 /* Pods_Gitster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B64AD88E3EE3738121B9C8 /* Pods_Gitster.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +47,8 @@
 		1DC7CEC81C73CAB000C1BF4A /* SearchingGit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchingGit.swift; path = GitsterTests/SearchingGit.swift; sourceTree = SOURCE_ROOT; };
 		1DC7CECA1C73CAB000C1BF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GitsterTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		1DCC4FE01C77D72900129422 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Networking.swift; path = Gitster/Networking.swift; sourceTree = SOURCE_ROOT; };
+		1DD1C3A81C79DCC400261B5E /* ViewingARepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewingARepository.swift; path = GitsterTests/ViewingARepository.swift; sourceTree = SOURCE_ROOT; };
+		1DD1C3AA1C79DD0200261B5E /* GitDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitDetailsViewModel.swift; sourceTree = "<group>"; };
 		524523B04C2185E836E7A4F0 /* Pods-Gitster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gitster/Pods-Gitster.debug.xcconfig"; sourceTree = "<group>"; };
 		592DBCCE1352D3F6E87D1535 /* Pods-Gitster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitster.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gitster/Pods-Gitster.release.xcconfig"; sourceTree = "<group>"; };
 		70B64AD88E3EE3738121B9C8 /* Pods_Gitster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gitster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +126,7 @@
 				1D096DB71C788F4600A67C6C /* Fakes */,
 				1DC7CEC81C73CAB000C1BF4A /* SearchingGit.swift */,
 				1DC7CECA1C73CAB000C1BF4A /* Info.plist */,
+				1DD1C3A81C79DCC400261B5E /* ViewingARepository.swift */,
 			);
 			path = GisterTests;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				1D1C43881C73D89D00B0C12B /* GitSearchViewModel.swift */,
+				1DD1C3AA1C79DD0200261B5E /* GitDetailsViewModel.swift */,
 			);
 			name = ViewModel;
 			path = Gitster/ViewModel;
@@ -367,6 +373,7 @@
 				1DAB121C1C78C7B000E53951 /* GitSearchViewController.swift in Sources */,
 				1DAB121D1C78C7B000E53951 /* GitSearchViewModel.swift in Sources */,
 				1DAB121E1C78C7B000E53951 /* AppDelegate.swift in Sources */,
+				1DD1C3AB1C79DD0200261B5E /* GitDetailsViewModel.swift in Sources */,
 				1DAB121F1C78C7B000E53951 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DC7CEC91C73CAB000C1BF4A /* SearchingGit.swift in Sources */,
+				1DD1C3A91C79DCC400261B5E /* ViewingARepository.swift in Sources */,
 				1D096DB91C788F5800A67C6C /* FakeNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

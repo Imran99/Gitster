@@ -10,4 +10,4 @@ before_install:
   - gem install cocoapods
 
 script:
-- xcodebuild clean build test -workspace Gitster.xcworkspace -scheme Gitster -sdk iphonesimulator ONLY_ACTIVE_ARCH=N
+- xctool test -workspace Gitster.xcworkspace -scheme Gitster -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO

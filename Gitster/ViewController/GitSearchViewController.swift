@@ -17,8 +17,16 @@ class GitSearchViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupView()
+        bind()
+    }
+    
+    private func setupView(){
         self.tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
-        
+    }
+    
+    private func bind(){
         viewModel.gists
             .lift()
             .bindTo(tableView){ indexPath, dataSource, tableView in

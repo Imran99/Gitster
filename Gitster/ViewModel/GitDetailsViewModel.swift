@@ -16,13 +16,15 @@ class GitDetailsViewModel {
     let avatarUrl = Observable<String>("")
     
     private let network: Networking
+    private let url: String
     
-    init(network: Networking){
+    init(network: Networking, url: String){
         self.network = network
+        self.url = url
     }
     
     func activate(){
-        network.request("requesturl", paramaters: [:]){ json in
+        network.request(url, paramaters: [:]){ json in
             self.name.next(json["name"].stringValue)
             self.avatarUrl.next(json["owner"]["avatar_url"].stringValue)
             self.description.next(json["description"].stringValue)

@@ -20,7 +20,7 @@ class SearchingGit: XCTestCase {
     override func setUp() {
         super.setUp()
         network = FakeNetwork()
-        network.responses.append([["name": "repo one"], ["name": "repo two"]])
+        network.responses.append([["name": "repo one", "url":"url one"], ["name": "repo two", "url":"url two"]])
         
         gitSearchViewModel = GitSearchViewModel(network: network)
         gitSearchViewModel.activate()
@@ -31,19 +31,21 @@ class SearchingGit: XCTestCase {
     }
     
     func testShouldLoadDefaultPublicReposOnStart() {
-        expect(self.gitSearchViewModel.gists.array).to(equal(["repo one", "repo two"]))
+        let expected = [RepositorySummary(name: "repo one", url: "url one"), RepositorySummary(name: "repo two", url: "url two")]
+        expect(self.gitSearchViewModel.gists.array).to(equal(expected))
         expect(self.network.request).to(equal("https://api.github.com/repositories"))
     }
     
     func testShouldSearchWhenThreeCharactersOrMoreEntered(){
         //arrange
-        network.responses.append(["items" : [["name" : "apple martini"], ["name": "apples"]] ])
+        network.responses.append(["items" : [["name" : "apple martini", "url":"url one"], ["name": "apples", "url":"url two"]] ])
         
         //act
         gitSearchViewModel.searchTerm.value = "app"
         
         //assert
-        expect(self.gitSearchViewModel.gists.array).to(equal(["apple martini","apples"]))
+        let expected = [RepositorySummary(name: "apple martini", url: "url one"), RepositorySummary(name: "apples", url: "url two")]
+        expect(self.gitSearchViewModel.gists.array).to(equal(expected))
         expect(self.network.request).to(equal("https://api.github.com/search/repositories"))
         expect(self.network.requestParams).to(equal(["q":"app"]))
     }
@@ -54,17 +56,18 @@ class SearchingGit: XCTestCase {
         
         gitSearchViewModel.searchTerm.value = "ap"
         
-        expect(self.gitSearchViewModel.gists.array).to(equal(["repo one", "repo two"]))
+        let expected = [RepositorySummary(name: "repo one", url: "url one"), RepositorySummary(name: "repo two", url: "url two")]
+        expect(self.gitSearchViewModel.gists.array).to(equal(expected))
     }
     
     func testShouldRefineSearchWhilstTyping(){
-        network.responses.append(["items" : [["name" : "abc"], ["name": "abcd"]] ])
-        network.responses.append(["items" : [["name" : "abcd"]] ])
+        network.responses.append(["items" : [["name" : "abc", "url" : "url one"], ["name": "abcd", "url":"url two"]] ])
+        network.responses.append(["items" : [["name" : "abcd", "url":"url two"]] ])
         
         gitSearchViewModel.searchTerm.value = "abc"
         gitSearchViewModel.searchTerm.value = "abcd"
         
-        expect(self.gitSearchViewModel.gists.array).to(equal(["abcd"]))
+        expect(self.gitSearchViewModel.gists.array).to(equal([RepositorySummary(name: "abcd", url: "url two")]))
     }
     
     func testShouldNotDisplayAnythingWhenNoMatchingRepositories(){

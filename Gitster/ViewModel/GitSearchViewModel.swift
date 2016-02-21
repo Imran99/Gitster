@@ -12,7 +12,7 @@ import SwiftyJSON
 //todo add a protocol to vm so can stub for ui
 class GitSearchViewModel{
     
-    let gists = ObservableArray<String>()
+    let gists = ObservableArray<RepositorySummary>()
     let searchTerm = Observable<String?>(nil)
     let error = EventProducer<String>()
     
@@ -27,8 +27,8 @@ class GitSearchViewModel{
         network.request("https://api.github.com/repositories", paramaters: [:], response: { json in
             self.handleIfError(json)
             json.forEach{ _, child in
-                if let name = child["name"].string{
-                    self.gists.append(name)
+                if let name = child["name"].string, let url = child["url"].string{
+                    self.gists.append(RepositorySummary(name:name, url:url))
                 }
             }
         })
@@ -49,8 +49,8 @@ class GitSearchViewModel{
         self.gists.removeAll()
         handleIfError(json)
         json["items"].forEach{ _, child in
-            if let name = child["name"].string{
-                self.gists.append(name)
+            if let name = child["name"].string, let url = child["url"].string{
+                self.gists.append(RepositorySummary(name:name, url:url))
             }
         }
     }

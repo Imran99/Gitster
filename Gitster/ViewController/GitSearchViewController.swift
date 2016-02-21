@@ -31,7 +31,8 @@ class GitSearchViewController: UITableViewController, BNDTableViewProxyDataSourc
             .lift()
             .bindTo(tableView, proxyDataSource: self) { indexPath, dataSource, tableView in
                 let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell))!
-                cell.textLabel!.text = dataSource[indexPath.section][indexPath.row]
+                let summary = dataSource[indexPath.section][indexPath.row]
+                cell.textLabel!.text = summary.name
                 return cell
         }
         
@@ -54,12 +55,20 @@ class GitSearchViewController: UITableViewController, BNDTableViewProxyDataSourc
         alertController.addAction(actionOk)
     }
     
+    //MARK: UITableView Methods
+    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false;
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier(String(GitDetailsViewController), sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let selectedIndex = tableView.indexPathForSelectedRow
+        let vc = segue.destinationViewController as! GitDetailsViewController
+        let summary = viewModel.gists.lift()[selectedIndex!.section][selectedIndex!.row]
+        vc.repositoryUrl = summary.url
     }
 }

@@ -90,6 +90,4 @@ class SearchingGit: XCTestCase {
         
         expect(self.gitSearchViewModel.gists.array).to(beEmpty())
     }
-    
-    //todo swiftyjson?
 }

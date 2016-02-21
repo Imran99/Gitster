@@ -23,11 +23,7 @@ class GitSearchViewModel{
     
     //todo use insert contents instead
     func activate(){
-        network.request("https://api.github.com/repositories", paramaters: [:], response: { data in
-            guard let d = data else{
-                return
-            }
-            let json = JSON(d)
+        network.request("https://api.github.com/repositories", paramaters: [:], response: { json in
             json.forEach{ _, child in
                 if let name = child["name"].string{
                     self.gists.append(name)
@@ -47,20 +43,8 @@ class GitSearchViewModel{
             })
     }
     
-    private func displaySearchResults(data: AnyObject?){
+    private func displaySearchResults(json: JSON){
         self.gists.removeAll()
-        
-        let handleError = {
-            self.gists.append("Oops! Check the log for details.")
-            print(data)
-        }
-        
-        guard let d = data else{
-            handleError()
-            return
-        }
-        
-        let json = JSON(d)
         json["items"].forEach{ _, child in
             if let name = child["name"].string{
                 self.gists.append(name)

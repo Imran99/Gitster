@@ -10,18 +10,19 @@ import XCTest
 import Alamofire
 import Bond
 import Nimble
+import SwiftyJSON
 @testable import Gitster
 
 class FakeNetwork : Networking{
     
-    var responses = [AnyObject]()
+    var responses = [JSON]()
     private(set) var request: String?
     private(set) var requestParams: [String:String]?
     
     private var requestCount = 0;
     
-    func request(request: String, paramaters: [String:String], response: AnyObject?->()){
-        self.request = request
+    func request(url: String, paramaters: [String:String], response: JSON->()) {
+        self.request = url
         self.requestParams = paramaters
         let cannedResponse = responses[requestCount]
         response(cannedResponse)

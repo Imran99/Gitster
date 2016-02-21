@@ -8,22 +8,23 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 public protocol Networking{
-    func request(url: String, paramaters: [String:String], response: AnyObject?->())
+    func request(url: String, paramaters: [String:String], response: JSON->())
 }
 
 //todo error handling
 //todo headers
 class Network : Networking{
-    func request(url: String, paramaters: [String:String], response: AnyObject?->()) {
+    func request(url: String, paramaters: [String:String], response: JSON->()) {
         Alamofire
             .request(.GET, url, parameters: paramaters)
-            .responseData{ r in
+            .responseJSON{ r in
                 
                 switch r.result {
                 case .Success(let data):
-                    response(data)
+                    response(JSON(data))
                 case .Failure(let error):
                     print(error)
                 }

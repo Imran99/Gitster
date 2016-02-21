@@ -27,10 +27,23 @@ class GitSearchViewController: UITableViewController {
                 return cell
         }
         
+        self.viewModel.error
+            .observe(self.displayError)
+        
         viewModel.activate()
         
         searchField.bnd_text
             .bindTo(viewModel.searchTerm)
+    }
+    
+    private func displayError(error: String){
+        let alertController = UIAlertController(title: "Computer says no!",
+            message: error, preferredStyle: .Alert)
+        self.presentViewController(alertController, animated: true, completion: nil)
+        let actionOk = UIAlertAction(title: "OK", style: .Default,
+            handler: { action in alertController.dismissViewControllerAnimated(true, completion: nil) })
+        
+        alertController.addAction(actionOk)
     }
 
     override func didReceiveMemoryWarning() {

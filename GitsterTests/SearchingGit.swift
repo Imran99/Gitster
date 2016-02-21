@@ -90,4 +90,29 @@ class SearchingGit: XCTestCase {
         
         expect(self.gitSearchViewModel.gists.array).to(beEmpty())
     }
+    
+    func testShouldDisplayErrorOnSearchWhenRateLimitExceeded(){
+        network.responses.append(["message" : "some error" ])
+        var error = [String]()
+        self.gitSearchViewModel.error.observe{error.append($0)}
+        
+        gitSearchViewModel.searchTerm.value = "abcd"
+        
+        expect(error).toEventually(equal(["some error"]), timeout: 1)
+        expect(self.gitSearchViewModel.gists.array).to(beEmpty())
+    }
+    
+    func testShouldDisplayErrorOnStartWhenRateLimitExceeded(){
+        network = FakeNetwork()
+        network.responses.removeAll()
+        network.responses.append(["message" : "some error" ])
+        var error = [String]()
+        gitSearchViewModel = GitSearchViewModel(network: network)
+        self.gitSearchViewModel.error.observe{error.append($0)}
+
+        gitSearchViewModel.activate()
+        
+        expect(error).toEventually(equal(["some error"]), timeout: 1)
+        expect(self.gitSearchViewModel.gists.array).to(beEmpty())
+    }
 }

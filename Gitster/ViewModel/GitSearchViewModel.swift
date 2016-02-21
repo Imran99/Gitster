@@ -14,6 +14,7 @@ class GitSearchViewModel{
     
     let gists = ObservableArray<String>()
     let searchTerm = Observable<String?>(nil)
+    let error = EventProducer<String>()
     
     private let network: Networking
     
@@ -24,6 +25,7 @@ class GitSearchViewModel{
     //todo use insert contents instead
     func activate(){
         network.request("https://api.github.com/repositories", paramaters: [:], response: { json in
+            self.handleIfError(json)
             json.forEach{ _, child in
                 if let name = child["name"].string{
                     self.gists.append(name)
@@ -45,10 +47,19 @@ class GitSearchViewModel{
     
     private func displaySearchResults(json: JSON){
         self.gists.removeAll()
+        handleIfError(json)
         json["items"].forEach{ _, child in
             if let name = child["name"].string{
                 self.gists.append(name)
             }
         }
+    }
+    
+    private func handleIfError(json: JSON){
+        guard let message = json["message"].string else{
+            return
+        }
+        print(message)
+        error.next(message)
     }
 }

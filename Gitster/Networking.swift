@@ -14,8 +14,6 @@ public protocol Networking{
     func request(url: String, paramaters: [String:String], response: JSON->())
 }
 
-//todo error handling
-//todo headers
 class Network : Networking{
     func request(url: String, paramaters: [String:String], response: JSON->()) {
         Alamofire

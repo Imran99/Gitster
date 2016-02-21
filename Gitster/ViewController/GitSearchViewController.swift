@@ -36,18 +36,18 @@ class GitSearchViewController: UITableViewController, BNDTableViewProxyDataSourc
                 cell.textLabel!.text = summary.name
                 return cell
         }
-        
-        self.viewModel.error
+
+        viewModel.error
             .observe(self.displayError)
         
-        viewModel.activate()
-        
-        searchField.bnd_text
-            .bindTo(viewModel.searchTerm)
+        viewModel.searchTerm
+            .bidirectionalBindTo(searchField.bnd_text)
         
         viewModel.searchInProgress
             .map{!$0}
             .bindTo(loadingSpinner.bnd_hidden)
+
+        viewModel.activate()
     }
     
     private func displayError(error: String){
@@ -69,6 +69,8 @@ class GitSearchViewController: UITableViewController, BNDTableViewProxyDataSourc
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier(String(GitDetailsViewController), sender: self)
     }
+
+    //MARK: Other UIKit
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let selectedIndex = tableView.indexPathForSelectedRow

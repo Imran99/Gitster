@@ -62,8 +62,8 @@ class SearchingGit: XCTestCase {
     
     func testShouldIgnoreSearchTermsLessThanThreeCharacters(){
         network.responses.append(["items" : [
-            ["name" : "avocados"],
-            ["name": "apples"]
+            ["name" : "avocados", "url": "url one"],
+            ["name": "apples", "url": "url two"]
             ]])
         
         gitSearchViewModel.searchTerm.value = "ap"
@@ -131,4 +131,24 @@ class SearchingGit: XCTestCase {
         expect(error).toEventually(equal(["some error"]), timeout: 1)
         expect(self.gitSearchViewModel.gists.array).to(beEmpty())
     }
+    
+    /*todo*
+    func testShouldLoadNextPageOfSearchResultsOnScroll(){
+        network.responses.append(["items" : [
+            ["name": "apples", "url": "url one"]
+            ]])
+        gitSearchViewModel.searchTerm.value = "fruit"
+        network.responses.append(["items" : [
+            ["name": "oranges", "url": "url two"]
+            ]])
+        
+        gitSearchViewModel.nextPage()
+        GitSearchViewController
+        let expected = [
+            RepositorySummary(name: "apples", url: "url one"),
+            RepositorySummary(name: "oranges", url: "url two")]
+        expect(self.gitSearchViewModel.gists.array).toEventually(equal(expected), timeout: 1)
+        expect(self.network.request).toEventually(equal("https://api.github.com/search/repositories"), timeout: 1)
+        expect(self.network.requestParams).toEventually(equal(["q":"fruit", "page":"2"]), timeout: 1)
+    }*/
 }

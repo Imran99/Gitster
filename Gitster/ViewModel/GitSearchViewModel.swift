@@ -9,7 +9,6 @@
 import Bond
 import SwiftyJSON
 
-//todo add a protocol to vm so can stub for ui
 class GitSearchViewModel{
     
     let gists = ObservableArray<RepositorySummary>()
@@ -18,12 +17,12 @@ class GitSearchViewModel{
     let searchInProgress = Observable<Bool>(false)
     
     private let network: Networking
+    private var currentPage = 1
     
     init(network: Networking){
         self.network = network
     }
     
-    //todo use insert contents instead
     func activate(){
         network.request("https://api.github.com/repositories", paramaters: [:], response: { json in
             self.handleIfError(json)
@@ -44,6 +43,25 @@ class GitSearchViewModel{
                 print(url)
                 self?.network.request(url, paramaters: ["q":$0], response: self!.displaySearchResults)
             })
+    }
+    
+    func nextPage(){
+        guard let query = searchTerm.value else{
+            return;
+        }
+        let params = [
+            "q":query,
+            "page":"\(self.currentPage+1)"
+        ]
+        network.request("https://api.github.com/search/repositories", paramaters: params, response: { json in
+            self.handleIfError(json)
+            self.currentPage++
+            json.forEach{ _, child in
+                if let name = child["name"].string, let url = child["url"].string{
+                    self.gists.append(RepositorySummary(name:name, url:url))
+                }
+            }
+        })
     }
     
     private func displaySearchResults(json: JSON){

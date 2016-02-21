@@ -18,7 +18,11 @@ class ViewingARepository: XCTestCase {
     override func setUp() {
         super.setUp()
         network = FakeNetwork()
-        network.responses.append(["owner":["avatar_url":"someurl"], "name":"my repo", "description":"this is a repo"])
+        network.responses.append([
+            "owner":["avatar_url":"someurl"],
+            "name":"my repo",
+            "description":"this is a repo"
+            ])
         
         detailsViewModel = GitDetailsViewModel(network: network, url: "www.example.com")
         detailsViewModel.activate()

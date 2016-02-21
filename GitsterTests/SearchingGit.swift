@@ -20,7 +20,9 @@ class SearchingGit: XCTestCase {
     override func setUp() {
         super.setUp()
         network = FakeNetwork()
-        network.responses.append([["name": "repo one", "url":"url one"], ["name": "repo two", "url":"url two"]])
+        network.responses.append([
+            ["name": "repo one", "url":"url one"],
+            ["name": "repo two", "url":"url two"]])
         
         gitSearchViewModel = GitSearchViewModel(network: network)
         gitSearchViewModel.activate()
@@ -31,20 +33,27 @@ class SearchingGit: XCTestCase {
     }
     
     func testShouldLoadDefaultPublicReposOnStart() {
-        let expected = [RepositorySummary(name: "repo one", url: "url one"), RepositorySummary(name: "repo two", url: "url two")]
+        let expected = [
+            RepositorySummary(name: "repo one", url: "url one"),
+            RepositorySummary(name: "repo two", url: "url two")]
         expect(self.gitSearchViewModel.gists.array).to(equal(expected))
         expect(self.network.request).to(equal("https://api.github.com/repositories"))
     }
     
     func testShouldSearchWhenThreeCharactersOrMoreEntered(){
         //arrange
-        network.responses.append(["items" : [["name" : "apple martini", "url":"url one"], ["name": "apples", "url":"url two"]] ])
+        network.responses.append(["items" : [
+            ["name" : "apple martini", "url":"url one"],
+            ["name": "apples", "url":"url two"]
+            ]])
         
         //act
         gitSearchViewModel.searchTerm.value = "app"
         
         //assert
-        let expected = [RepositorySummary(name: "apple martini", url: "url one"), RepositorySummary(name: "apples", url: "url two")]
+        let expected = [
+            RepositorySummary(name: "apple martini", url: "url one"),
+            RepositorySummary(name: "apples", url: "url two")]
         expect(self.gitSearchViewModel.gists.array).to(equal(expected))
         expect(self.network.request).to(equal("https://api.github.com/search/repositories"))
         expect(self.network.requestParams).to(equal(["q":"app"]))
@@ -52,17 +61,27 @@ class SearchingGit: XCTestCase {
     
     
     func testShouldIgnoreSearchTermsLessThanThreeCharacters(){
-        network.responses.append(["items" : [["name" : "avocados"], ["name": "apples"]] ])
+        network.responses.append(["items" : [
+            ["name" : "avocados"],
+            ["name": "apples"]
+            ]])
         
         gitSearchViewModel.searchTerm.value = "ap"
         
-        let expected = [RepositorySummary(name: "repo one", url: "url one"), RepositorySummary(name: "repo two", url: "url two")]
+        let expected = [
+            RepositorySummary(name: "repo one", url: "url one"),
+            RepositorySummary(name: "repo two", url: "url two")]
         expect(self.gitSearchViewModel.gists.array).to(equal(expected))
     }
     
     func testShouldRefineSearchWhilstTyping(){
-        network.responses.append(["items" : [["name" : "abc", "url" : "url one"], ["name": "abcd", "url":"url two"]] ])
-        network.responses.append(["items" : [["name" : "abcd", "url":"url two"]] ])
+        network.responses.append(["items" : [
+            ["name" : "abc", "url" : "url one"],
+            ["name": "abcd", "url":"url two"]
+            ]])
+        network.responses.append(["items" :[
+            ["name" : "abcd","url":"url two"]
+            ]])
         
         gitSearchViewModel.searchTerm.value = "abc"
         gitSearchViewModel.searchTerm.value = "abcd"

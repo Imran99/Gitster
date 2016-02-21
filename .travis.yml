@@ -5,7 +5,7 @@ branches:
  - master
 
 before_install:
-  - rvm use system
+  - rvm get stable
   - gem install cocoapods
 
 xcode_project: Gitster.xcodeproj

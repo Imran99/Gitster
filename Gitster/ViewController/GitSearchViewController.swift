@@ -9,7 +9,7 @@
 import UIKit
 import Bond
 
-class GitSearchViewController: UITableViewController, BNDTableViewProxyDataSource {
+class GitSearchViewController: UITableViewController {
 
     @IBOutlet var searchField: UITextField!
     @IBOutlet var loadingSpinner: UIActivityIndicatorView!
@@ -30,7 +30,7 @@ class GitSearchViewController: UITableViewController, BNDTableViewProxyDataSourc
     private func bind(){
         viewModel.gists
             .lift()
-            .bindTo(tableView, proxyDataSource: self) { indexPath, dataSource, tableView in
+            .bindTo(tableView) { indexPath, dataSource, tableView in
                 let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell))!
                 let summary = dataSource[indexPath.section][indexPath.row]
                 cell.textLabel!.text = summary.name
@@ -61,10 +61,6 @@ class GitSearchViewController: UITableViewController, BNDTableViewProxyDataSourc
     }
     
     //MARK: UITableView Methods
-    
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false;
-    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier(String(GitDetailsViewController), sender: self)

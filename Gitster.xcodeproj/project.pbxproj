@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1D096DB91C788F5800A67C6C /* FakeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D096DB81C788F5800A67C6C /* FakeNetwork.swift */; };
+		1D23177F1C7CEF0400DB6399 /* GitChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23177E1C7CEF0400DB6399 /* GitChatViewModel.swift */; };
+		1D2317991C7CF2B100DB6399 /* CacheDb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D2317971C7CF2B100DB6399 /* CacheDb.xcdatamodeld */; };
+		1D2317A21C7CF36F00DB6399 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2317A01C7CF36F00DB6399 /* Message.swift */; };
 		1DA1B9101C79FEC9001805F3 /* RepositorySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1B90F1C79FEC9001805F3 /* RepositorySummary.swift */; };
 		1DAB12171C78C52400E53951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAB12131C78C52400E53951 /* Main.storyboard */; };
 		1DAB12181C78C52400E53951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAB12151C78C52400E53951 /* LaunchScreen.storyboard */; };
@@ -38,6 +41,9 @@
 		1B6F486D4580F1500D999C07 /* Pods_GitsterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitsterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D096DB81C788F5800A67C6C /* FakeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeNetwork.swift; path = GitsterTests/FakeNetwork.swift; sourceTree = SOURCE_ROOT; };
 		1D1C43881C73D89D00B0C12B /* GitSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitSearchViewModel.swift; path = Gitster/ViewModel/GitSearchViewModel.swift; sourceTree = SOURCE_ROOT; };
+		1D23177E1C7CEF0400DB6399 /* GitChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitChatViewModel.swift; sourceTree = "<group>"; };
+		1D2317981C7CF2B100DB6399 /* CacheDb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CacheDb.xcdatamodel; sourceTree = "<group>"; };
+		1D2317A01C7CF36F00DB6399 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1DA1B90F1C79FEC9001805F3 /* RepositorySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySummary.swift; sourceTree = "<group>"; };
 		1DAB12141C78C52400E53951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Gitster/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		1DAB12161C78C52400E53951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Gitster/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
@@ -88,6 +94,15 @@
 			name = Fakes;
 			sourceTree = "<group>";
 		};
+		1D23179E1C7CF36F00DB6399 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1D2317A01C7CF36F00DB6399 /* Message.swift */,
+			);
+			name = CoreData;
+			path = Gitster/CoreData;
+			sourceTree = SOURCE_ROOT;
+		};
 		1DA1B90E1C79FE9F001805F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +115,7 @@
 		1DC7CEA71C73CAB000C1BF4A = {
 			isa = PBXGroup;
 			children = (
+				1D2317971C7CF2B100DB6399 /* CacheDb.xcdatamodeld */,
 				1DC7CEB21C73CAB000C1BF4A /* Gitster */,
 				1DC7CEC71C73CAB000C1BF4A /* GisterTests */,
 				1DC7CEB11C73CAB000C1BF4A /* Products */,
@@ -120,6 +136,7 @@
 		1DC7CEB21C73CAB000C1BF4A /* Gitster */ = {
 			isa = PBXGroup;
 			children = (
+				1D23179E1C7CF36F00DB6399 /* CoreData */,
 				1DA1B90E1C79FE9F001805F3 /* Model */,
 				1DD1C3A41C790A9400261B5E /* ViewController */,
 				1DD1C3A51C790A9400261B5E /* ViewModel */,
@@ -158,6 +175,7 @@
 		1DD1C3A51C790A9400261B5E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1D23177E1C7CEF0400DB6399 /* GitChatViewModel.swift */,
 				1D1C43881C73D89D00B0C12B /* GitSearchViewModel.swift */,
 				1DD1C3AA1C79DD0200261B5E /* GitDetailsViewModel.swift */,
 			);
@@ -386,9 +404,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DAB121C1C78C7B000E53951 /* GitSearchViewController.swift in Sources */,
+				1D23177F1C7CEF0400DB6399 /* GitChatViewModel.swift in Sources */,
 				1DAB121D1C78C7B000E53951 /* GitSearchViewModel.swift in Sources */,
+				1D2317991C7CF2B100DB6399 /* CacheDb.xcdatamodeld in Sources */,
 				1DD1C3AD1C79E68800261B5E /* GitDetailsViewController.swift in Sources */,
 				1DAB121E1C78C7B000E53951 /* AppDelegate.swift in Sources */,
+				1D2317A21C7CF36F00DB6399 /* Message.swift in Sources */,
 				1DA1B9101C79FEC9001805F3 /* RepositorySummary.swift in Sources */,
 				1DD1C3AB1C79DD0200261B5E /* GitDetailsViewModel.swift in Sources */,
 				1DAB121F1C78C7B000E53951 /* Networking.swift in Sources */,
@@ -601,6 +622,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1D2317971C7CF2B100DB6399 /* CacheDb.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1D2317981C7CF2B100DB6399 /* CacheDb.xcdatamodel */,
+			);
+			currentVersion = 1D2317981C7CF2B100DB6399 /* CacheDb.xcdatamodel */;
+			name = CacheDb.xcdatamodeld;
+			path = Gitster/CacheDb.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1DC7CEA81C73CAB000C1BF4A /* Project object */;
 }

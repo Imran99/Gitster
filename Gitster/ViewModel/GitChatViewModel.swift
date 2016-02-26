@@ -8,7 +8,8 @@
 
 import Foundation
 import Bond
+import CoreData
 
 class GitChatViewModel{
-    let messages = ObservableArray<String>()
+    //let messages = ObservableDataSource(dataSource: NSFetchedResultsController())
 }

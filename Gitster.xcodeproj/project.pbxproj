@@ -11,6 +11,8 @@
 		1D23177F1C7CEF0400DB6399 /* GitChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23177E1C7CEF0400DB6399 /* GitChatViewModel.swift */; };
 		1D2317991C7CF2B100DB6399 /* CacheDb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D2317971C7CF2B100DB6399 /* CacheDb.xcdatamodeld */; };
 		1D2317A21C7CF36F00DB6399 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2317A01C7CF36F00DB6399 /* Message.swift */; };
+		1D2317A41C7CF46B00DB6399 /* ObservableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2317A31C7CF46B00DB6399 /* ObservableDataSource.swift */; };
+		1D2317A61C7CFACA00DB6399 /* GitChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2317A51C7CFACA00DB6399 /* GitChatViewController.swift */; };
 		1DA1B9101C79FEC9001805F3 /* RepositorySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1B90F1C79FEC9001805F3 /* RepositorySummary.swift */; };
 		1DAB12171C78C52400E53951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAB12131C78C52400E53951 /* Main.storyboard */; };
 		1DAB12181C78C52400E53951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAB12151C78C52400E53951 /* LaunchScreen.storyboard */; };
@@ -19,6 +21,8 @@
 		1DAB121D1C78C7B000E53951 /* GitSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C43881C73D89D00B0C12B /* GitSearchViewModel.swift */; };
 		1DAB121E1C78C7B000E53951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */; };
 		1DAB121F1C78C7B000E53951 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCC4FE01C77D72900129422 /* Networking.swift */; };
+		1DB0206B1C8090AA00B66384 /* ObservingFetchedMessageResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB020691C80902400B66384 /* ObservingFetchedMessageResults.swift */; };
+		1DB0206D1C8090F100B66384 /* FakeFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0206C1C8090F100B66384 /* FakeFetchedResultsController.swift */; };
 		1DC7CEC91C73CAB000C1BF4A /* SearchingGit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7CEC81C73CAB000C1BF4A /* SearchingGit.swift */; };
 		1DD1C3A91C79DCC400261B5E /* ViewingARepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD1C3A81C79DCC400261B5E /* ViewingARepository.swift */; };
 		1DD1C3AB1C79DD0200261B5E /* GitDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD1C3AA1C79DD0200261B5E /* GitDetailsViewModel.swift */; };
@@ -39,15 +43,19 @@
 
 /* Begin PBXFileReference section */
 		1B6F486D4580F1500D999C07 /* Pods_GitsterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitsterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D096DB81C788F5800A67C6C /* FakeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeNetwork.swift; path = GitsterTests/FakeNetwork.swift; sourceTree = SOURCE_ROOT; };
+		1D096DB81C788F5800A67C6C /* FakeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeNetwork.swift; path = GitsterTests/Fakes/FakeNetwork.swift; sourceTree = SOURCE_ROOT; };
 		1D1C43881C73D89D00B0C12B /* GitSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitSearchViewModel.swift; path = Gitster/ViewModel/GitSearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		1D23177E1C7CEF0400DB6399 /* GitChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitChatViewModel.swift; sourceTree = "<group>"; };
 		1D2317981C7CF2B100DB6399 /* CacheDb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CacheDb.xcdatamodel; sourceTree = "<group>"; };
 		1D2317A01C7CF36F00DB6399 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		1D2317A31C7CF46B00DB6399 /* ObservableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObservableDataSource.swift; path = Gitster/ObservableDataSource.swift; sourceTree = SOURCE_ROOT; };
+		1D2317A51C7CFACA00DB6399 /* GitChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitChatViewController.swift; sourceTree = "<group>"; };
 		1DA1B90F1C79FEC9001805F3 /* RepositorySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySummary.swift; sourceTree = "<group>"; };
 		1DAB12141C78C52400E53951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Gitster/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		1DAB12161C78C52400E53951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Gitster/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		1DAB121A1C78C72000E53951 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Gitster/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		1DB020691C80902400B66384 /* ObservingFetchedMessageResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObservingFetchedMessageResults.swift; path = Gitster/ObservingFetchedMessageResults.swift; sourceTree = SOURCE_ROOT; };
+		1DB0206C1C8090F100B66384 /* FakeFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeFetchedResultsController.swift; path = GitsterTests/Fakes/FakeFetchedResultsController.swift; sourceTree = SOURCE_ROOT; };
 		1DC7CEB01C73CAB000C1BF4A /* Gitster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gitster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DC7CEB31C73CAB000C1BF4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Gitster/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		1DC7CEB51C73CAB000C1BF4A /* GitSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GitSearchViewController.swift; path = Gitster/ViewController/GitSearchViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -90,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				1D096DB81C788F5800A67C6C /* FakeNetwork.swift */,
+				1DB0206C1C8090F100B66384 /* FakeFetchedResultsController.swift */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -146,6 +155,7 @@
 				1DC7CEBF1C73CAB000C1BF4A /* Info.plist */,
 				1DCC4FE01C77D72900129422 /* Networking.swift */,
 				1DAB121A1C78C72000E53951 /* Images.xcassets */,
+				1D2317A31C7CF46B00DB6399 /* ObservableDataSource.swift */,
 			);
 			name = Gitster;
 			path = Gister;
@@ -158,6 +168,7 @@
 				1DC7CEC81C73CAB000C1BF4A /* SearchingGit.swift */,
 				1DC7CECA1C73CAB000C1BF4A /* Info.plist */,
 				1DD1C3A81C79DCC400261B5E /* ViewingARepository.swift */,
+				1DB020691C80902400B66384 /* ObservingFetchedMessageResults.swift */,
 			);
 			path = GisterTests;
 			sourceTree = "<group>";
@@ -167,6 +178,7 @@
 			children = (
 				1DC7CEB51C73CAB000C1BF4A /* GitSearchViewController.swift */,
 				1DD1C3AC1C79E68800261B5E /* GitDetailsViewController.swift */,
+				1D2317A51C7CFACA00DB6399 /* GitChatViewController.swift */,
 			);
 			name = ViewController;
 			path = Gitster/ViewController;
@@ -405,6 +417,7 @@
 			files = (
 				1DAB121C1C78C7B000E53951 /* GitSearchViewController.swift in Sources */,
 				1D23177F1C7CEF0400DB6399 /* GitChatViewModel.swift in Sources */,
+				1DB0206D1C8090F100B66384 /* FakeFetchedResultsController.swift in Sources */,
 				1DAB121D1C78C7B000E53951 /* GitSearchViewModel.swift in Sources */,
 				1D2317991C7CF2B100DB6399 /* CacheDb.xcdatamodeld in Sources */,
 				1DD1C3AD1C79E68800261B5E /* GitDetailsViewController.swift in Sources */,
@@ -412,6 +425,8 @@
 				1D2317A21C7CF36F00DB6399 /* Message.swift in Sources */,
 				1DA1B9101C79FEC9001805F3 /* RepositorySummary.swift in Sources */,
 				1DD1C3AB1C79DD0200261B5E /* GitDetailsViewModel.swift in Sources */,
+				1D2317A61C7CFACA00DB6399 /* GitChatViewController.swift in Sources */,
+				1D2317A41C7CF46B00DB6399 /* ObservableDataSource.swift in Sources */,
 				1DAB121F1C78C7B000E53951 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +437,7 @@
 			files = (
 				1DC7CEC91C73CAB000C1BF4A /* SearchingGit.swift in Sources */,
 				1DD1C3A91C79DCC400261B5E /* ViewingARepository.swift in Sources */,
+				1DB0206B1C8090AA00B66384 /* ObservingFetchedMessageResults.swift in Sources */,
 				1D096DB91C788F5800A67C6C /* FakeNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

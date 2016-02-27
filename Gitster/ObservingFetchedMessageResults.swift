@@ -13,18 +13,20 @@ import CoreData
 
 class ObservingFetchedMessageResults: XCTestCase {
     
-    var dataSource: DataSource<String>!
+    var dataSource: BindableDataSource<String>!
     var fetchController: FakeFetchedResultsController!
     
     override func setUp() {
         super.setUp()
-        fetchController = FakeFetchedResultsController()
+        
         let context = setUpInMemoryManagedObjectContext()
         let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as! Message
         message.text = "hello world"
+        
+        fetchController = FakeFetchedResultsController()
         fetchController.items = [[message]]
         
-        dataSource = DataSource(fetchController: fetchController)
+        dataSource = BindableDataSource.MessageDataSource(fetchController)
     }
     
     override func tearDown() {

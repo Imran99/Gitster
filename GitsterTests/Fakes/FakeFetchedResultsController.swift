@@ -15,4 +15,6 @@ class FakeFetchedResultsController : FetchedResultsControllerType{
     func objectAtIndexPath(indexPath: NSIndexPath) -> AnyObject{
         return items[indexPath.section][indexPath.row]
     }
+    
+    var sections: [NSFetchedResultsSectionInfo]? { return nil }
 }

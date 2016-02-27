@@ -11,23 +11,40 @@ import CoreData
 
 public protocol FetchedResultsControllerType{
     func objectAtIndexPath(indexPath: NSIndexPath) -> AnyObject
+    var sections: [NSFetchedResultsSectionInfo]? { get }
     weak var delegate: NSFetchedResultsControllerDelegate? {get set}
 }
 
 extension NSFetchedResultsController : FetchedResultsControllerType{
 }
 
-class DataSource<T> {
-    
+class BindableDataSource<T> {
+    typealias map = AnyObject -> T
+
     private let fetchController: FetchedResultsControllerType
+    private let mapper: map
     
-    init(fetchController: FetchedResultsControllerType){
+    init(fetchController: FetchedResultsControllerType, mapper: map){
         self.fetchController = fetchController
+        self.mapper = mapper
     }
     
     subscript(section: Int, row: Int) -> T{
-        let message = fetchController.objectAtIndexPath(NSIndexPath(forRow: row, inSection: section)) as! Message;
+        let object = fetchController.objectAtIndexPath(NSIndexPath(forRow: row, inSection: section));
+        let mapped = mapper(object)
+        return mapped
+    }
+}
+
+extension BindableDataSource where T:Message{
+    
+    class func MessageDataSource(fetchController: FetchedResultsControllerType)->BindableDataSource<String>{
         
-        return message.text as! T
+        let mapper: AnyObject->String = {source in
+            let message = source as! Message
+            return message.text!
+        }
+        
+        return BindableDataSource<String>(fetchController: fetchController, mapper: mapper)
     }
 }

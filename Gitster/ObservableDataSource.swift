@@ -17,17 +17,17 @@ public protocol FetchedResultsControllerType{
 extension NSFetchedResultsController : FetchedResultsControllerType{
 }
 
-class MessageDataSource {
+class DataSource<T> {
     
-    private let dataSource: FetchedResultsControllerType
+    private let fetchController: FetchedResultsControllerType
     
-    init(dataSource: FetchedResultsControllerType){
-        self.dataSource = dataSource
+    init(fetchController: FetchedResultsControllerType){
+        self.fetchController = fetchController
     }
     
-    subscript(section: Int, row: Int) -> String{
-        let message = dataSource.objectAtIndexPath(NSIndexPath(forRow: row, inSection: section)) as! Message;
+    subscript(section: Int, row: Int) -> T{
+        let message = fetchController.objectAtIndexPath(NSIndexPath(forRow: row, inSection: section)) as! Message;
         
-        return message.text!
+        return message.text as! T
     }
 }

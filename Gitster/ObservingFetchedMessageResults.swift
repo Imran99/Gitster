@@ -13,7 +13,7 @@ import CoreData
 
 class ObservingFetchedMessageResults: XCTestCase {
     
-    var dataSource: MessageDataSource!
+    var dataSource: DataSource<String>!
     var fetchController: FakeFetchedResultsController!
     
     override func setUp() {
@@ -24,7 +24,7 @@ class ObservingFetchedMessageResults: XCTestCase {
         message.text = "hello world"
         fetchController.items = [[message]]
         
-        dataSource = MessageDataSource(dataSource: fetchController)
+        dataSource = DataSource(fetchController: fetchController)
     }
     
     override func tearDown() {

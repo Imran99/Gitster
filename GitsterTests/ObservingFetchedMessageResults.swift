@@ -19,7 +19,7 @@ class ObservingFetchedMessageResults: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        let context = setUpInMemoryManagedObjectContext()
+        let context = ManagedObjectContextBuilder().Build()
         let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as! Message
         message.text = "hello world"
         
@@ -37,23 +37,5 @@ class ObservingFetchedMessageResults: XCTestCase {
         let result = dataSource[0,0]
         
         expect(result).to(equal("hello world"))
-    }
-    
-    func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext {
-        let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles([NSBundle.mainBundle()])!
-        
-        let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-        
-        do {
-            try persistentStoreCoordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil)
-        } catch {
-            print("Adding in-memory persistent store coordinator failed")
-        }
-        
-        let managedObjectContext = NSManagedObjectContext(concurrencyType:
-            NSManagedObjectContextConcurrencyType.PrivateQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
-        
-        return managedObjectContext
     }
 }

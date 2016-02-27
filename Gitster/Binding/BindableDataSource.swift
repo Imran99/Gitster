@@ -35,16 +35,3 @@ class BindableDataSource<T> {
         return mapped
     }
 }
-
-extension BindableDataSource where T:Message{
-    
-    class func MessageDataSource(fetchController: FetchedResultsControllerType)->BindableDataSource<String>{
-        
-        let mapper: AnyObject->String = {source in
-            let message = source as! Message
-            return message.text!
-        }
-        
-        return BindableDataSource<String>(fetchController: fetchController, mapper: mapper)
-    }
-}

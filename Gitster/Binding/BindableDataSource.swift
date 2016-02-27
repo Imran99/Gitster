@@ -6,17 +6,7 @@
 //  Copyright © 2016 AppBrains. All rights reserved.
 //
 
-import Bond
-import CoreData
-
-public protocol FetchedResultsControllerType{
-    func objectAtIndexPath(indexPath: NSIndexPath) -> AnyObject
-    var sections: [NSFetchedResultsSectionInfo]? { get }
-    weak var delegate: NSFetchedResultsControllerDelegate? {get set}
-}
-
-extension NSFetchedResultsController : FetchedResultsControllerType{
-}
+import Foundation
 
 class BindableDataSource<T> {
     typealias map = AnyObject -> T
@@ -32,6 +22,7 @@ class BindableDataSource<T> {
     subscript(section: Int, row: Int) -> T{
         let object = fetchController.objectAtIndexPath(NSIndexPath(forRow: row, inSection: section));
         let mapped = mapper(object)
+        
         return mapped
     }
 }

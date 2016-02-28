@@ -64,7 +64,7 @@ class ObservingFetchedMessageResults: XCTestCase {
         expect(self.tableView.operations).to(equal(expectedOperations))
     }
     
-    func testShouldInsertARowWhenDataSourceInsertsARow(){
+    func testShouldInsertRowWhenDataSourceInsertsARow(){
         let message = messageBuilder.With("inserted item").Build()
         fetchController.append(0, item: message)
         
@@ -72,14 +72,14 @@ class ObservingFetchedMessageResults: XCTestCase {
         expect(self.tableView.operations).to(equal(expectedOperations))
     }
     
-    func testShouldDeleteARowWhenDataSourceDeletesARow(){
+    func testShouldDeleteRowWhenDataSourceDeletesARow(){
         fetchController.delete(0, row: 1)
         
         expectedOperations.append(.DeleteRows([NSIndexPath(forItem: 1, inSection: 0)]))
         expect(self.tableView.operations).to(equal(expectedOperations))
     }
     
-    func testShouldUpdateARowWhenDataSourceUpdatesARow(){
+    func testShouldReloadRowWhenDataSourceUpdatesARow(){
         let message = messageBuilder.With("updated item").Build()
         fetchController.update(0, row: 1, item: message)
         
@@ -91,6 +91,20 @@ class ObservingFetchedMessageResults: XCTestCase {
         fetchController.appendSection()
         
         expectedOperations.append(.InsertSections(NSIndexSet(index: 1)))
+        expect(self.tableView.operations).to(equal(expectedOperations))
+    }
+    
+    func testShouldReloadSectionWhenDataSourceUpdatesSection(){
+        fetchController.updateSection(0)
+        
+        expectedOperations.append(.ReloadSections(NSIndexSet(index: 0)))
+        expect(self.tableView.operations).to(equal(expectedOperations))
+    }
+    
+    func testShouldDeleteSectionWhenDataSourceDeletesSection(){
+        fetchController.deleteSection(0)
+        
+        expectedOperations.append(.DeleteSections(NSIndexSet(index: 0)))
         expect(self.tableView.operations).to(equal(expectedOperations))
     }
 }

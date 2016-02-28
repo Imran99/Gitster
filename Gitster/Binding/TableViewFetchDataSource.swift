@@ -30,11 +30,15 @@ class TableViewFetchDataSource: NSObject, UITableViewDataSource, NSFetchedResult
     
     //todo user rowanimations
     @objc func controller(controller: NSFetchedResultsController, didChangeSection: NSFetchedResultsSectionInfo, atIndex: Int, forChangeType: NSFetchedResultsChangeType){
-        let index = NSIndexSet(index: atIndex);
 
+        let index = NSIndexSet(index: atIndex);
         switch forChangeType{
         case .Insert:
             tableView.insertSections(index, withRowAnimation: .Automatic)
+        case .Update:
+            tableView.reloadSections(index, withRowAnimation: .Automatic)
+        case .Delete:
+            tableView.deleteSections(index, withRowAnimation: .Automatic)
         default:
             fatalError("todo")
         }

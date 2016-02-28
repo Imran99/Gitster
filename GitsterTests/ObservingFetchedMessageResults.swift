@@ -15,6 +15,8 @@ class ObservingFetchedMessageResults: XCTestCase {
     
     var dataSource: BindableDataSource<String>!
     var fetchController: FakeFetchedResultsController!
+    var tableView: FakeTableView!
+    var expectedOperations: [TableOperation]!
     
     override func setUp() {
         super.setUp()
@@ -27,15 +29,33 @@ class ObservingFetchedMessageResults: XCTestCase {
         fetchController.items = [[message]]
         
         dataSource = BindableDataSource.MessageDataSource(fetchController)
+
+        tableView = FakeTableView()
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: String(UITableViewCell))
+        
+        expectedOperations = []
+        
+        dataSource.bindTo(tableView) { (indexPath, array, tableView) -> UITableViewCell in
+            let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell), forIndexPath: indexPath)
+            return cell
+        }
+        
+        expectedOperations.append(.ReloadData)
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
+    //todo test sections
+    //todo test through test tableview
     func testShouldReturnRequestedItem(){
         let result = dataSource[0,0]
         
         expect(result).to(equal("hello world"))
+    }
+    
+    func testShouldReloadTableViewOnBind(){
+        expect(self.tableView.operations).to(equal(expectedOperations))
     }
 }

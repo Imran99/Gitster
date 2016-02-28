@@ -11,6 +11,9 @@
 		1D08B8A71C823B9500DC21E0 /* BindableDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08B8A51C823B9500DC21E0 /* BindableDataSourceFactory.swift */; };
 		1D08B8AA1C823BD100DC21E0 /* ObservingFetchedMessageResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08B8A81C823BC000DC21E0 /* ObservingFetchedMessageResults.swift */; };
 		1D08B8AC1C823C5A00DC21E0 /* FetchedResultControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08B8AB1C823C5A00DC21E0 /* FetchedResultControllerType.swift */; };
+		1D08B8AF1C823EA200DC21E0 /* FakeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08B8AD1C823E9700DC21E0 /* FakeTableView.swift */; };
+		1D08B8B11C82445400DC21E0 /* TableViewFetchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08B8B01C82445400DC21E0 /* TableViewFetchDataSource.swift */; };
+		1D08B8B31C82462100DC21E0 /* FakeNSFetchedResultsSectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08B8B21C82462100DC21E0 /* FakeNSFetchedResultsSectionInfo.swift */; };
 		1D096DB91C788F5800A67C6C /* FakeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D096DB81C788F5800A67C6C /* FakeNetwork.swift */; };
 		1D23177F1C7CEF0400DB6399 /* GitChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23177E1C7CEF0400DB6399 /* GitChatViewModel.swift */; };
 		1D2317991C7CF2B100DB6399 /* CacheDb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D2317971C7CF2B100DB6399 /* CacheDb.xcdatamodeld */; };
@@ -50,6 +53,9 @@
 		1D08B8A51C823B9500DC21E0 /* BindableDataSourceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableDataSourceFactory.swift; sourceTree = "<group>"; };
 		1D08B8A81C823BC000DC21E0 /* ObservingFetchedMessageResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObservingFetchedMessageResults.swift; path = GitsterTests/ObservingFetchedMessageResults.swift; sourceTree = SOURCE_ROOT; };
 		1D08B8AB1C823C5A00DC21E0 /* FetchedResultControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultControllerType.swift; sourceTree = "<group>"; };
+		1D08B8AD1C823E9700DC21E0 /* FakeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeTableView.swift; path = GitsterTests/Fakes/FakeTableView.swift; sourceTree = SOURCE_ROOT; };
+		1D08B8B01C82445400DC21E0 /* TableViewFetchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewFetchDataSource.swift; sourceTree = "<group>"; };
+		1D08B8B21C82462100DC21E0 /* FakeNSFetchedResultsSectionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeNSFetchedResultsSectionInfo.swift; path = GitsterTests/Fakes/FakeNSFetchedResultsSectionInfo.swift; sourceTree = SOURCE_ROOT; };
 		1D096DB81C788F5800A67C6C /* FakeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeNetwork.swift; path = GitsterTests/Fakes/FakeNetwork.swift; sourceTree = SOURCE_ROOT; };
 		1D1C43881C73D89D00B0C12B /* GitSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitSearchViewModel.swift; path = Gitster/ViewModel/GitSearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		1D23177E1C7CEF0400DB6399 /* GitChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitChatViewModel.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 				1D08B8A41C823B9500DC21E0 /* BindableDataSource.swift */,
 				1D08B8A51C823B9500DC21E0 /* BindableDataSourceFactory.swift */,
 				1D08B8AB1C823C5A00DC21E0 /* FetchedResultControllerType.swift */,
+				1D08B8B01C82445400DC21E0 /* TableViewFetchDataSource.swift */,
 			);
 			name = Binding;
 			path = Gitster/Binding;
@@ -116,6 +123,8 @@
 			children = (
 				1D096DB81C788F5800A67C6C /* FakeNetwork.swift */,
 				1DB0206C1C8090F100B66384 /* FakeFetchedResultsController.swift */,
+				1D08B8AD1C823E9700DC21E0 /* FakeTableView.swift */,
+				1D08B8B21C82462100DC21E0 /* FakeNSFetchedResultsSectionInfo.swift */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -442,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D08B8B31C82462100DC21E0 /* FakeNSFetchedResultsSectionInfo.swift in Sources */,
 				1D4464D11C823A2C00EF0A6D /* ManagedObjectContextBuilder.swift in Sources */,
 				1DAB121C1C78C7B000E53951 /* GitSearchViewController.swift in Sources */,
 				1D23177F1C7CEF0400DB6399 /* GitChatViewModel.swift in Sources */,
@@ -454,6 +464,7 @@
 				1DA1B9101C79FEC9001805F3 /* RepositorySummary.swift in Sources */,
 				1DD1C3AB1C79DD0200261B5E /* GitDetailsViewModel.swift in Sources */,
 				1D2317A61C7CFACA00DB6399 /* GitChatViewController.swift in Sources */,
+				1D08B8B11C82445400DC21E0 /* TableViewFetchDataSource.swift in Sources */,
 				1D08B8AC1C823C5A00DC21E0 /* FetchedResultControllerType.swift in Sources */,
 				1DAB121F1C78C7B000E53951 /* Networking.swift in Sources */,
 				1D08B8A71C823B9500DC21E0 /* BindableDataSourceFactory.swift in Sources */,
@@ -469,6 +480,7 @@
 				1DC7CEC91C73CAB000C1BF4A /* SearchingGit.swift in Sources */,
 				1DD1C3A91C79DCC400261B5E /* ViewingARepository.swift in Sources */,
 				1D096DB91C788F5800A67C6C /* FakeNetwork.swift in Sources */,
+				1D08B8AF1C823EA200DC21E0 /* FakeTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,23 +2,25 @@ import UIKit
 import CoreData
 import Bond
 
-class TableViewFetchDataSource: NSObject, UITableViewDataSource, NSFetchedResultsControllerDelegate{
+class TableViewFetchDataSource<T>: NSObject, UITableViewDataSource, NSFetchedResultsControllerDelegate{
     
+    private let bindableDataSource: BindableDataSource<T>
     private let fetchController: FetchedResultsControllerType
     private weak var tableView: UITableView!
-    private let createCell: (NSIndexPath, FetchedResultsControllerType, UITableView) -> UITableViewCell
+    private let createCell: (NSIndexPath, BindableDataSource<T>, UITableView) -> UITableViewCell
     private weak var proxyDataSource: BNDTableViewProxyDataSource?
     private let sectionObservingDisposeBag = DisposeBag()
     
-    init(fetchController: FetchedResultsControllerType, tableView: UITableView, proxyDataSource: BNDTableViewProxyDataSource?, createCell: (NSIndexPath, FetchedResultsControllerType, UITableView) -> UITableViewCell) {
-        self.fetchController = fetchController
+    init(bindableDataSource: BindableDataSource<T>, tableView: UITableView, proxyDataSource: BNDTableViewProxyDataSource?, createCell: (NSIndexPath, BindableDataSource<T>, UITableView) -> UITableViewCell) {
+        self.bindableDataSource = bindableDataSource
+        self.fetchController = bindableDataSource.fetchController
         self.createCell = createCell
         self.tableView = tableView
         
         super.init()
         
         self.tableView.dataSource = self
-        self.fetchController.delegate = self
+        fetchController.delegate = self
         self.tableView.reloadData()
     }
     
@@ -70,7 +72,7 @@ class TableViewFetchDataSource: NSObject, UITableViewDataSource, NSFetchedResult
     }
     
     @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        return UITableViewCell()
+        return createCell(indexPath, bindableDataSource, tableView)
     }
     
     @objc func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

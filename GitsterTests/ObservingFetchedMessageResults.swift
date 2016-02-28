@@ -36,8 +36,10 @@ class ObservingFetchedMessageResults: XCTestCase {
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: String(UITableViewCell))
 
         dataSource = BindableDataSource.MessageDataSource(fetchController)
-        dataSource.bindTo(tableView) { (indexPath, array, tableView) -> UITableViewCell in
+        dataSource.bindTo(tableView) { (indexPath, dataSource, tableView) -> UITableViewCell in
             let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell), forIndexPath: indexPath)
+            cell.textLabel?.text = dataSource[indexPath.section, indexPath.row]
+            
             return cell
         }
         
@@ -52,12 +54,15 @@ class ObservingFetchedMessageResults: XCTestCase {
     //todo move rows
     //todo move section
     //todo test sections
-    //todo test through test tableview
-    //todo load data in tableview on first bind
-    func testShouldReturnRequestedItem(){
-        let result = dataSource[0,1]
+    func testShouldLoadCellsOnDemand(){
+        let count = tableView.numberOfRowsInSection(0)
+        let sectionCount = tableView.numberOfSections
+        tableView.scrollToRowAtIndexPath(NSIndexPath(forItem: 1, inSection: 0), atScrollPosition: .Middle, animated: false)
+        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forItem: 1, inSection: 0))
         
-        expect(result).to(equal("message two"))
+        expect(sectionCount).to(equal(1))
+        expect(count).to(equal(2))
+        expect(cell!.textLabel!.text).to(equal("message two"))
     }
     
     func testShouldReloadTableViewOnBind(){

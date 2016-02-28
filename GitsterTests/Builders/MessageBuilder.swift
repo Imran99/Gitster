@@ -44,16 +44,16 @@ class MessageBuilder {
         dateComponents.day = -1
         
         let gregorianCalendar: NSCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
-        let yesterDayDate: NSDate = gregorianCalendar.dateByAddingComponents(dateComponents, toDate: today, options:NSCalendarOptions(rawValue: 0))!
+        let yesterdayDate: NSDate = gregorianCalendar.dateByAddingComponents(dateComponents, toDate: today, options:NSCalendarOptions(rawValue: 0))!
         
-        date = yesterDayDate
+        date = yesterdayDate
         return self;
     }
     
     func build() -> Message{
         let message = NSEntityDescription.insertNewObjectForEntityForName(String(Message), inManagedObjectContext: context) as! Message
         message.text = self.message
-        message.date = NSDate()
+        message.date = date
         
         return message
     }

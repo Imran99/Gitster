@@ -9,7 +9,7 @@
 import UIKit
 import Bond
 
-class GitChatViewController: UITableViewController {
+class GitChatViewController: UITableViewController, BNDFetchTableViewProxyDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +18,16 @@ class GitChatViewController: UITableViewController {
         
         let viewModel = GitChatViewModel(context: Database.context)
         viewModel.messages
-            .bindTo(self.tableView){ indexPath, dataSource, tableView in
+            .bindTo(self.tableView, proxyDataSource:self){ indexPath, dataSource, tableView in
                 let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell))!
                 cell.textLabel?.text = dataSource[indexPath.section, indexPath.row]
 
                 return cell
         }
-        
-        
+    }
+    
+    func tableViewDidInsertRow() {
+        let rowCount = tableView.numberOfRowsInSection(0)
+        tableView.scrollToRowAtIndexPath(NSIndexPath(forItem: rowCount-1, inSection: 0), atScrollPosition: .Top, animated: true)
     }
 }

@@ -18,6 +18,19 @@ class FakeSocketListener: NSObject {
     }
     
     func chatReceived(timer: NSTimer!){
-        Database.saveMessage("hello")
+        
+        let index = arc4random_uniform(UInt32(vocabulary.count))
+        let message = vocabulary[Int(index)]
+            
+        Database.saveMessage(message)
     }
+    
+    private var vocabulary = [
+    "are you going to the pub tonight?",
+    "did you do a checkin?",
+    "whats the weather like?",
+    "well i was going to but now i'm not",
+    "Android? Who uses Android?",
+    "bill says hello",
+    ]
 }

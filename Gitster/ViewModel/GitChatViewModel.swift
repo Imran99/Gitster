@@ -17,7 +17,7 @@ class GitChatViewModel{
     init(context: NSManagedObjectContext){
         
         let fetch = NSFetchRequest(entityName: String(Message))
-        fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
         let fetchController = NSFetchedResultsController(fetchRequest: fetch, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
         messages = BindableDataSource.MessageDataSource(fetchController)

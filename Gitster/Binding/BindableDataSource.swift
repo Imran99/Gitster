@@ -40,7 +40,7 @@ extension UITableView {
 
 extension BindableDataSource {
     
-    func bindTo(tableView: UITableView, proxyDataSource: BNDTableViewProxyDataSource? = nil, createCell: (NSIndexPath, BindableDataSource, UITableView) -> UITableViewCell) -> DisposableType {
+    func bindTo(tableView: UITableView, proxyDataSource: BNDFetchTableViewProxyDataSource? = nil, createCell: (NSIndexPath, BindableDataSource, UITableView) -> UITableViewCell) -> DisposableType {
         
         let dataSource = TableViewFetchDataSource(bindableDataSource: self, tableView: tableView, proxyDataSource: proxyDataSource, createCell: createCell)
         objc_setAssociatedObject(tableView, &UITableView.AssociatedKeys.BondFetchedResultsDataSourceKey, dataSource, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)

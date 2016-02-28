@@ -2,20 +2,25 @@ import UIKit
 import CoreData
 import Bond
 
+@objc protocol BNDFetchTableViewProxyDataSource : BNDTableViewProxyDataSource{
+    optional func tableViewDidInsertRow()
+}
+
 class TableViewFetchDataSource<T>: NSObject, UITableViewDataSource, NSFetchedResultsControllerDelegate{
     
     private let bindableDataSource: BindableDataSource<T>
     private let fetchController: FetchedResultsControllerType
     private weak var tableView: UITableView!
     private let createCell: (NSIndexPath, BindableDataSource<T>, UITableView) -> UITableViewCell
-    private weak var proxyDataSource: BNDTableViewProxyDataSource?
+    private weak var proxyDataSource: BNDFetchTableViewProxyDataSource?
     private let sectionObservingDisposeBag = DisposeBag()
     
-    init(bindableDataSource: BindableDataSource<T>, tableView: UITableView, proxyDataSource: BNDTableViewProxyDataSource?, createCell: (NSIndexPath, BindableDataSource<T>, UITableView) -> UITableViewCell) {
+    init(bindableDataSource: BindableDataSource<T>, tableView: UITableView, proxyDataSource: BNDFetchTableViewProxyDataSource?, createCell: (NSIndexPath, BindableDataSource<T>, UITableView) -> UITableViewCell) {
         self.bindableDataSource = bindableDataSource
         self.fetchController = bindableDataSource.fetchController
         self.createCell = createCell
         self.tableView = tableView
+        self.proxyDataSource = proxyDataSource
         
         super.init()
         
@@ -52,6 +57,7 @@ class TableViewFetchDataSource<T>: NSObject, UITableViewDataSource, NSFetchedRes
         switch type {
         case .Insert:
             tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+            proxyDataSource?.tableViewDidInsertRow?()
         case .Update:
             tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
         case .Delete:

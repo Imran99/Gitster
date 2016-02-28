@@ -14,7 +14,7 @@ class GitChatViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let viewModel = GitChatViewModel()
+        //let viewModel = GitChatViewModel()
         /*viewModel.messages
             .bindTo(self.tableView){ indexPath, dataSource, tableView in
                 let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell))!

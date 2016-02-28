@@ -10,21 +10,25 @@ import UIKit
 import Bond
 
 class BindableDataSource<T> {
-    typealias map = AnyObject -> T
+    typealias mapper = AnyObject -> T
 
     let fetchController: FetchedResultsControllerType
-    private let mapper: map
+    private let map: mapper
     
-    init(fetchController: FetchedResultsControllerType, mapper: map){
+    init(fetchController: FetchedResultsControllerType, map: mapper){
         self.fetchController = fetchController
-        self.mapper = mapper
+        self.map = map
     }
     
     subscript(section: Int, row: Int) -> T{
         let object = fetchController.objectAtIndexPath(NSIndexPath(forRow: row, inSection: section));
-        let mapped = mapper(object)
+        let mapped = map(object)
         
         return mapped
+    }
+    
+    var data: [T]? {
+        return fetchController.fetchedObjects?.map(map)
     }
 }
 

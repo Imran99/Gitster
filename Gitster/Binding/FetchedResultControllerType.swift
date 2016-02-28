@@ -11,6 +11,7 @@ import CoreData
 public protocol FetchedResultsControllerType{
     func objectAtIndexPath(indexPath: NSIndexPath) -> AnyObject
     var sections: [NSFetchedResultsSectionInfo]? { get }
+    var fetchedObjects: [AnyObject]? { get }
     weak var delegate: NSFetchedResultsControllerDelegate? {get set}
 }
 

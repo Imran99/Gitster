@@ -13,23 +13,47 @@ class MessageBuilder {
 
     private var context: NSManagedObjectContext!
     private var message = "hello world"
+    private var date = NSDate()
     
     init(){
     }
     
-    func With(context: NSManagedObjectContext) -> MessageBuilder{
+    func with(context: NSManagedObjectContext) -> MessageBuilder{
         self.context = context
         return self
     }
     
-    func With(message: String) -> MessageBuilder{
+    func with(message: String) -> MessageBuilder{
         self.message = message
         return self
     }
     
-    func Build() -> Message{
+    func with(date: NSDate)->MessageBuilder{
+        self.date = date;
+        return self;
+    }
+    
+    func sentToday()->MessageBuilder{
+        date = NSDate();
+        return self;
+    }
+    
+    func sentYesterday()->MessageBuilder{
+        let today: NSDate = NSDate()
+        let dateComponents: NSDateComponents = NSDateComponents()
+        dateComponents.day = -1
+        
+        let gregorianCalendar: NSCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
+        let yesterDayDate: NSDate = gregorianCalendar.dateByAddingComponents(dateComponents, toDate: today, options:NSCalendarOptions(rawValue: 0))!
+        
+        date = yesterDayDate
+        return self;
+    }
+    
+    func build() -> Message{
         let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as! Message
         message.text = self.message
+        message.date = NSDate()
         
         return message
     }

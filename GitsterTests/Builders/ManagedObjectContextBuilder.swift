@@ -10,7 +10,7 @@ import CoreData
 
 class ManagedObjectContextBuilder{
     
-    func Build() -> NSManagedObjectContext{
+    func build() -> NSManagedObjectContext{
         let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles([NSBundle.mainBundle()])!
         
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)

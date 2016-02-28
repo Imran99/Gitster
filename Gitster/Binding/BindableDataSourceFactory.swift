@@ -17,6 +17,6 @@ extension BindableDataSource where T:Message{
             return message.text!
         }
         
-        return BindableDataSource<String>(fetchController: fetchController, mapper: mapper)
+        return BindableDataSource<String>(fetchController: fetchController, map: mapper)
     }
 }

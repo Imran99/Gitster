@@ -15,6 +15,7 @@ class FakeFetchedResultsController : FetchedResultsControllerType{
     }
     private var fakeSections = [FakeNSFetchedResultsSectionInfo]()
     weak var delegate: NSFetchedResultsControllerDelegate?
+    var fetchedObjects: [AnyObject]? { fatalError("not implemented") }
     
     func objectAtIndexPath(indexPath: NSIndexPath) -> AnyObject{
         return items[indexPath.section][indexPath.row]

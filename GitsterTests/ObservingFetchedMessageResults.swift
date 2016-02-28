@@ -22,10 +22,10 @@ class ObservingFetchedMessageResults: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        let context = ManagedObjectContextBuilder().Build()
-        messageBuilder.With(context)
-        let messageOne = messageBuilder.With("message one").Build()
-        let messageTwo = messageBuilder.With("message two").Build()
+        let context = ManagedObjectContextBuilder().build()
+        messageBuilder.with(context)
+        let messageOne = messageBuilder.with("message one").build()
+        let messageTwo = messageBuilder.with("message two").build()
         
         fetchController = FakeFetchedResultsController()
         fetchController.appendSection()
@@ -70,7 +70,7 @@ class ObservingFetchedMessageResults: XCTestCase {
     }
     
     func testShouldInsertRowWhenDataSourceInsertsARow(){
-        let message = messageBuilder.With("inserted item").Build()
+        let message = messageBuilder.with("inserted item").build()
         fetchController.append(0, item: message)
         
         expectedOperations.append(.InsertRows([NSIndexPath(forItem: 2, inSection: 0)]))
@@ -85,7 +85,7 @@ class ObservingFetchedMessageResults: XCTestCase {
     }
     
     func testShouldReloadRowWhenDataSourceUpdatesARow(){
-        let message = messageBuilder.With("updated item").Build()
+        let message = messageBuilder.with("updated item").build()
         fetchController.update(0, row: 1, item: message)
         
         expectedOperations.append(.ReloadRows([NSIndexPath(forItem: 1, inSection: 0)]))

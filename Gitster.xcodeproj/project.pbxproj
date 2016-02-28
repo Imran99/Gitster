@@ -16,6 +16,8 @@
 		1D08B8B31C82462100DC21E0 /* FakeNSFetchedResultsSectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08B8B21C82462100DC21E0 /* FakeNSFetchedResultsSectionInfo.swift */; };
 		1D08B8B51C830CD100DC21E0 /* MessageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08B8B41C830CD100DC21E0 /* MessageBuilder.swift */; };
 		1D08B8B71C8338A000DC21E0 /* Chatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08B8B61C8338A000DC21E0 /* Chatting.swift */; };
+		1D08B8B91C8364B300DC21E0 /* FakeSocketListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08B8B81C8364B300DC21E0 /* FakeSocketListener.swift */; };
+		1D08B8BB1C83683600DC21E0 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08B8BA1C83683600DC21E0 /* Database.swift */; };
 		1D096DB91C788F5800A67C6C /* FakeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D096DB81C788F5800A67C6C /* FakeNetwork.swift */; };
 		1D23177F1C7CEF0400DB6399 /* GitChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23177E1C7CEF0400DB6399 /* GitChatViewModel.swift */; };
 		1D2317991C7CF2B100DB6399 /* CacheDb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D2317971C7CF2B100DB6399 /* CacheDb.xcdatamodeld */; };
@@ -60,6 +62,8 @@
 		1D08B8B21C82462100DC21E0 /* FakeNSFetchedResultsSectionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeNSFetchedResultsSectionInfo.swift; path = GitsterTests/Fakes/FakeNSFetchedResultsSectionInfo.swift; sourceTree = SOURCE_ROOT; };
 		1D08B8B41C830CD100DC21E0 /* MessageBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBuilder.swift; sourceTree = "<group>"; };
 		1D08B8B61C8338A000DC21E0 /* Chatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chatting.swift; path = GitsterTests/Chatting.swift; sourceTree = SOURCE_ROOT; };
+		1D08B8B81C8364B300DC21E0 /* FakeSocketListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeSocketListener.swift; path = GitsterTests/FakeSocketListener.swift; sourceTree = SOURCE_ROOT; };
+		1D08B8BA1C83683600DC21E0 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Database.swift; path = Gitster/CoreData/Database.swift; sourceTree = SOURCE_ROOT; };
 		1D096DB81C788F5800A67C6C /* FakeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeNetwork.swift; path = GitsterTests/Fakes/FakeNetwork.swift; sourceTree = SOURCE_ROOT; };
 		1D1C43881C73D89D00B0C12B /* GitSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitSearchViewModel.swift; path = Gitster/ViewModel/GitSearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		1D23177E1C7CEF0400DB6399 /* GitChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitChatViewModel.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				1DC7CEBF1C73CAB000C1BF4A /* Info.plist */,
 				1DCC4FE01C77D72900129422 /* Networking.swift */,
 				1DAB121A1C78C72000E53951 /* Images.xcassets */,
+				1D08B8B81C8364B300DC21E0 /* FakeSocketListener.swift */,
+				1D08B8BA1C83683600DC21E0 /* Database.swift */,
 			);
 			name = Gitster;
 			path = Gister;
@@ -463,11 +469,13 @@
 				1D23177F1C7CEF0400DB6399 /* GitChatViewModel.swift in Sources */,
 				1DB0206D1C8090F100B66384 /* FakeFetchedResultsController.swift in Sources */,
 				1DAB121D1C78C7B000E53951 /* GitSearchViewModel.swift in Sources */,
+				1D08B8B91C8364B300DC21E0 /* FakeSocketListener.swift in Sources */,
 				1D2317991C7CF2B100DB6399 /* CacheDb.xcdatamodeld in Sources */,
 				1DD1C3AD1C79E68800261B5E /* GitDetailsViewController.swift in Sources */,
 				1DAB121E1C78C7B000E53951 /* AppDelegate.swift in Sources */,
 				1D2317A21C7CF36F00DB6399 /* Message.swift in Sources */,
 				1DA1B9101C79FEC9001805F3 /* RepositorySummary.swift in Sources */,
+				1D08B8BB1C83683600DC21E0 /* Database.swift in Sources */,
 				1DD1C3AB1C79DD0200261B5E /* GitDetailsViewModel.swift in Sources */,
 				1D2317A61C7CFACA00DB6399 /* GitChatViewController.swift in Sources */,
 				1D08B8B11C82445400DC21E0 /* TableViewFetchDataSource.swift in Sources */,

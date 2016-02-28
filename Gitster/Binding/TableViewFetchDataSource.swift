@@ -48,7 +48,7 @@ class TableViewFetchDataSource<T>: NSObject, UITableViewDataSource, NSFetchedRes
     
     //todo user rowanimations
     @objc func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
-        let indexPaths = [indexPath!]
+        let indexPaths = [newIndexPath!]
         switch type {
         case .Insert:
             tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)

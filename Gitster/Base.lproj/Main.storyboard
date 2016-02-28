@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nVK-eW-0Hz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WQf-0v-nb2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -41,11 +41,11 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hjC-3C-KI2" id="ftq-4I-AHg">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vhb-iW-XTA">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,7 +78,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1153" y="296"/>
+            <point key="canvasLocation" x="1965" y="296"/>
         </scene>
         <!--Git Details View Controller-->
         <scene sceneID="zpI-B9-Fb4">
@@ -132,12 +132,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTO-aS-dyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886" y="296"/>
+            <point key="canvasLocation" x="2698" y="296"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Git-->
         <scene sceneID="nlc-QG-sWO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nVK-eW-0Hz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Git" id="Zd8-oP-Huf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WH8-C8-0ro">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -150,7 +151,55 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlC-Pe-Bbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="341" y="296"/>
+            <point key="canvasLocation" x="1153" y="296"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="3kt-Im-OeD">
+            <objects>
+                <tableViewController id="Z1v-wF-uNU" customClass="GitChatViewController" customModule="Gitster" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NEC-MF-Gc6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" id="Inh-Zc-E6j">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Inh-Zc-E6j" id="2cX-nc-ICi">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Z1v-wF-uNU" id="zGT-F1-2SV"/>
+                            <outlet property="delegate" destination="Z1v-wF-uNU" id="k7c-d3-cpD"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Chat" id="sxv-Cm-wRI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEf-ip-tOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1153" y="1020"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="pLV-sL-tzn">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WQf-0v-nb2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="oNg-72-BNc">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nVK-eW-0Hz" kind="relationship" relationship="viewControllers" id="Ufi-q6-Yeg"/>
+                        <segue destination="Z1v-wF-uNU" kind="relationship" relationship="viewControllers" id="GVA-xb-iKz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="heJ-ka-7vi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="268" y="296"/>
         </scene>
     </scenes>
 </document>

@@ -51,7 +51,7 @@ class MessageBuilder {
     }
     
     func build() -> Message{
-        let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as! Message
+        let message = NSEntityDescription.insertNewObjectForEntityForName(String(Message), inManagedObjectContext: context) as! Message
         message.text = self.message
         message.date = NSDate()
         

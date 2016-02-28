@@ -14,12 +14,17 @@ class GitChatViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let viewModel = GitChatViewModel()
-        /*viewModel.messages
+        self.tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
+        
+        let viewModel = GitChatViewModel(context: Database.context)
+        viewModel.messages
             .bindTo(self.tableView){ indexPath, dataSource, tableView in
                 let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell))!
-                
+                cell.textLabel?.text = dataSource[indexPath.section, indexPath.row]
+
                 return cell
-        }*/
+        }
+        
+        
     }
 }

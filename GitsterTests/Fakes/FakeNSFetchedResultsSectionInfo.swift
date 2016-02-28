@@ -9,13 +9,14 @@
 import CoreData
 
 class FakeNSFetchedResultsSectionInfo : NSFetchedResultsSectionInfo{
-    @objc var numberOfObjects: Int
+    @objc var numberOfObjects: Int {
+        return objects?.count ?? 0
+    }
     @objc var objects: [AnyObject]?
     @objc var name: String
     @objc var indexTitle: String?
     
     init(){
-        numberOfObjects = 0
         name = "section"
     }
 }

@@ -15,6 +15,10 @@ class TableViewFetchDataSource: NSObject, UITableViewDataSource, NSFetchedResult
         self.createCell = createCell
         self.tableView = tableView
         
+        super.init()
+        
+        self.tableView.dataSource = self
+        self.fetchController.delegate = self
         self.tableView.reloadData()
     }
     
@@ -27,17 +31,25 @@ class TableViewFetchDataSource: NSObject, UITableViewDataSource, NSFetchedResult
     @objc func controller(controller: NSFetchedResultsController, didChangeSection: NSFetchedResultsSectionInfo, atIndex: Int, forChangeType: NSFetchedResultsChangeType){
     }
     
+    //todo user rowanimations
     @objc func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        let indexPaths = [indexPath!]
+        switch type {
+        case .Insert:
+            tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+        default:
+            print("not supported")
+        }
     }
     
     /// MARK - UITableViewDataSource
     
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
+        return fetchController.sections?.count ?? 0
     }
     
     @objc func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return fetchController.sections![section].numberOfObjects
     }
     
     @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{

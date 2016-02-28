@@ -17,29 +17,29 @@ class ObservingFetchedMessageResults: XCTestCase {
     var fetchController: FakeFetchedResultsController!
     var tableView: FakeTableView!
     var expectedOperations: [TableOperation]!
+    let messageBuilder = MessageBuilder()
     
     override func setUp() {
         super.setUp()
         
         let context = ManagedObjectContextBuilder().Build()
-        let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as! Message
-        message.text = "hello world"
+        messageBuilder.With(context).With("hello world")
+        let message = messageBuilder.Build()
         
         fetchController = FakeFetchedResultsController()
-        fetchController.items = [[message]]
+        fetchController.appendSection()
+        fetchController.append(0, item: message)
         
-        dataSource = BindableDataSource.MessageDataSource(fetchController)
-
         tableView = FakeTableView()
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: String(UITableViewCell))
-        
-        expectedOperations = []
-        
+
+        dataSource = BindableDataSource.MessageDataSource(fetchController)
         dataSource.bindTo(tableView) { (indexPath, array, tableView) -> UITableViewCell in
             let cell = tableView.dequeueReusableCellWithIdentifier(String(UITableViewCell), forIndexPath: indexPath)
             return cell
         }
         
+        expectedOperations = []
         expectedOperations.append(.ReloadData)
     }
     
@@ -49,6 +49,7 @@ class ObservingFetchedMessageResults: XCTestCase {
     
     //todo test sections
     //todo test through test tableview
+    //todo load data in tableview on first bind
     func testShouldReturnRequestedItem(){
         let result = dataSource[0,0]
         
@@ -56,6 +57,14 @@ class ObservingFetchedMessageResults: XCTestCase {
     }
     
     func testShouldReloadTableViewOnBind(){
+        expect(self.tableView.operations).to(equal(expectedOperations))
+    }
+    
+    func testShouldInsertARowWhenDataSourceInsertsARow(){
+        let message = messageBuilder.With("inserted item").Build()
+        fetchController.append(0, item: message)
+        
+        expectedOperations.append(.InsertRows([NSIndexPath(forItem: 1, inSection: 0)]))
         expect(self.tableView.operations).to(equal(expectedOperations))
     }
 }

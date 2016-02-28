@@ -9,12 +9,29 @@
 import CoreData
 
 class FakeFetchedResultsController : FetchedResultsControllerType{
-    var items = [[AnyObject]]()
+    private(set) var items = [[AnyObject]]()
+    var sections: [NSFetchedResultsSectionInfo]? {
+        return fakeSections
+    }
+    private var fakeSections = [FakeNSFetchedResultsSectionInfo]()
     weak var delegate: NSFetchedResultsControllerDelegate?
     
     func objectAtIndexPath(indexPath: NSIndexPath) -> AnyObject{
         return items[indexPath.section][indexPath.row]
     }
     
-    var sections: [NSFetchedResultsSectionInfo]? { return nil }
+    func append(section: Int, item: AnyObject){
+        items[section].append(item)
+        fakeSections[section].objects!.append(item)
+        
+        let indexPath = NSIndexPath(forItem: items[section].count-1, inSection: section)
+        delegate?.controller?(NSFetchedResultsController(), didChangeObject: item, atIndexPath: indexPath, forChangeType: .Insert, newIndexPath: nil)
+    }
+    
+    func appendSection(){
+        items.append([AnyObject]())
+        let section = FakeNSFetchedResultsSectionInfo()
+        section.objects = [AnyObject]()
+        fakeSections.append(section)
+    }
 }

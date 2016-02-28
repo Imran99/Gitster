@@ -49,6 +49,8 @@ class ObservingFetchedMessageResults: XCTestCase {
         super.tearDown()
     }
     
+    //todo move rows
+    //todo move section
     //todo test sections
     //todo test through test tableview
     //todo load data in tableview on first bind
@@ -82,6 +84,13 @@ class ObservingFetchedMessageResults: XCTestCase {
         fetchController.update(0, row: 1, item: message)
         
         expectedOperations.append(.ReloadRows([NSIndexPath(forItem: 1, inSection: 0)]))
+        expect(self.tableView.operations).to(equal(expectedOperations))
+    }
+    
+    func testShouldInsertSectionWhenDataSourceInsertsASection(){
+        fetchController.appendSection()
+        
+        expectedOperations.append(.InsertSections(NSIndexSet(index: 1)))
         expect(self.tableView.operations).to(equal(expectedOperations))
     }
 }

@@ -28,7 +28,16 @@ class TableViewFetchDataSource: NSObject, UITableViewDataSource, NSFetchedResult
     @objc func controllerDidChangeContent(controller: NSFetchedResultsController) {
     }
     
+    //todo user rowanimations
     @objc func controller(controller: NSFetchedResultsController, didChangeSection: NSFetchedResultsSectionInfo, atIndex: Int, forChangeType: NSFetchedResultsChangeType){
+        let index = NSIndexSet(index: atIndex);
+
+        switch forChangeType{
+        case .Insert:
+            tableView.insertSections(index, withRowAnimation: .Automatic)
+        default:
+            fatalError("todo")
+        }
     }
     
     //todo user rowanimations
@@ -42,7 +51,7 @@ class TableViewFetchDataSource: NSObject, UITableViewDataSource, NSFetchedResult
         case .Delete:
             tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
         default:
-            print("not supported")
+            fatalError("not supported")
         }
     }
     

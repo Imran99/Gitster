@@ -76,4 +76,12 @@ class ObservingFetchedMessageResults: XCTestCase {
         expectedOperations.append(.DeleteRows([NSIndexPath(forItem: 1, inSection: 0)]))
         expect(self.tableView.operations).to(equal(expectedOperations))
     }
+    
+    func testShouldUpdateARowWhenDataSourceUpdatesARow(){
+        let message = messageBuilder.With("updated item").Build()
+        fetchController.update(0, row: 1, item: message)
+        
+        expectedOperations.append(.ReloadRows([NSIndexPath(forItem: 1, inSection: 0)]))
+        expect(self.tableView.operations).to(equal(expectedOperations))
+    }
 }

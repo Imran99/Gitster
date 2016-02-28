@@ -28,6 +28,13 @@ class FakeFetchedResultsController : FetchedResultsControllerType{
         delegate?.controller?(NSFetchedResultsController(), didChangeObject: item, atIndexPath: indexPath, forChangeType: .Insert, newIndexPath: nil)
     }
     
+    func update(section: Int, row: Int, item: AnyObject){
+        items[section][row] = item
+        
+        let indexPath = NSIndexPath(forItem: row, inSection: section)
+        delegate?.controller?(NSFetchedResultsController(), didChangeObject: item, atIndexPath: indexPath, forChangeType: .Update, newIndexPath: nil)
+    }
+    
     func delete(section: Int, row: Int){
         let item = items[section].removeAtIndex(row)
         fakeSections[section].objects?.removeAtIndex(row)

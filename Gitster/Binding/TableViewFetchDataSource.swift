@@ -37,6 +37,8 @@ class TableViewFetchDataSource: NSObject, UITableViewDataSource, NSFetchedResult
         switch type {
         case .Insert:
             tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+        case .Update:
+            tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
         case .Delete:
             tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
         default:

@@ -23,12 +23,14 @@ class ObservingFetchedMessageResults: XCTestCase {
         super.setUp()
         
         let context = ManagedObjectContextBuilder().Build()
-        messageBuilder.With(context).With("hello world")
-        let message = messageBuilder.Build()
+        messageBuilder.With(context)
+        let messageOne = messageBuilder.With("message one").Build()
+        let messageTwo = messageBuilder.With("message two").Build()
         
         fetchController = FakeFetchedResultsController()
         fetchController.appendSection()
-        fetchController.append(0, item: message)
+        fetchController.append(0, item: messageOne)
+        fetchController.append(0, item: messageTwo)
         
         tableView = FakeTableView()
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: String(UITableViewCell))
@@ -51,9 +53,9 @@ class ObservingFetchedMessageResults: XCTestCase {
     //todo test through test tableview
     //todo load data in tableview on first bind
     func testShouldReturnRequestedItem(){
-        let result = dataSource[0,0]
+        let result = dataSource[0,1]
         
-        expect(result).to(equal("hello world"))
+        expect(result).to(equal("message two"))
     }
     
     func testShouldReloadTableViewOnBind(){
@@ -64,14 +66,14 @@ class ObservingFetchedMessageResults: XCTestCase {
         let message = messageBuilder.With("inserted item").Build()
         fetchController.append(0, item: message)
         
-        expectedOperations.append(.InsertRows([NSIndexPath(forItem: 1, inSection: 0)]))
+        expectedOperations.append(.InsertRows([NSIndexPath(forItem: 2, inSection: 0)]))
         expect(self.tableView.operations).to(equal(expectedOperations))
     }
     
     func testShouldDeleteARowWhenDataSourceDeletesARow(){
-        fetchController.delete(0, row: 0)
+        fetchController.delete(0, row: 1)
         
-        expectedOperations.append(.DeleteRows([NSIndexPath(forItem: 0, inSection: 0)]))
+        expectedOperations.append(.DeleteRows([NSIndexPath(forItem: 1, inSection: 0)]))
         expect(self.tableView.operations).to(equal(expectedOperations))
     }
 }
